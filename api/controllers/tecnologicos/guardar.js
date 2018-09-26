@@ -8,7 +8,6 @@ module.exports = {
       }
   },
   exits:{
-
   },
   fn:async function(inputs,exits){
       var tecnologico;
@@ -22,6 +21,5 @@ module.exports = {
       sails.log('Resultado de guardar Tecnologico',tecnologico);
       return exits.success(tecnologico);
   }
-
 };
 

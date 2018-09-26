@@ -23,14 +23,6 @@ module.exports.bootstrap = async function(done) {
       password: await sails.helpers.passwords.hashPassword('12345678')
     });
   }
-   if (await Tecnologicos.count({numero:'001'}) === 0) {
-    await Tecnologicos.create({
-      numero: '001',
-      nombre:'IT Oaxaca',
-      direccion: 'lol'
-    });
-  }
-
   // By convention, this is a good place to set up fake data during development.
   //
   // For example:
