@@ -1,0 +1,54 @@
+/**
+ * Bootstrap
+ * (sails.config.bootstrap)
+ *
+ * An asynchronous bootstrap function that runs just before your Sails app gets lifted.
+ * > Need more flexibility?  You can also do this by creating a hook.
+ *
+ * For more information on bootstrapping your app, check out:
+ * https://sailsjs.com/config/bootstrap
+ */
+
+module.exports.bootstrap = async function(done) {
+
+  //Crear nuestro primer usuario del sistema!, verificamos si existe con count
+  //si no exite, lo creamos con create
+  if (await Usuarios.count({curp:'SACJ940613HOCNRS03'}) === 0) {
+    await Usuarios.create({
+      nombre: 'Jesus Antonio Santaella Cruz',
+      usuario:'super Administrador',
+      curp: 'SACJ940613HOCNRS03',
+      tipo:'admin',
+      activo: true,
+      password: await sails.helpers.passwords.hashPassword('12345678')
+    });
+  }
+   if (await Tecnologicos.count({numero:'001'}) === 0) {
+    await Tecnologicos.create({
+      numero: '001',
+      nombre:'IT Oaxaca',
+      direccion: 'lol'
+    });
+  }
+
+  // By convention, this is a good place to set up fake data during development.
+  //
+  // For example:
+  // ```
+  // // Set up fake development data (or if we already have some, avast)
+  // if (await User.count() > 0) {
+  //   return done();
+  // }
+  //
+  // await User.createEach([
+  //   { emailAddress: 'ry@example.com', fullName: 'Ryan Dahl', },
+  //   { emailAddress: 'rachael@example.com', fullName: 'Rachael Shaw', },
+  //   // etc.
+  // ]);
+  // ```
+
+  // Don't forget to trigger `done()` when this bootstrap function's logic is finished.
+  // (otherwise your server will never lift, since it's waiting on the bootstrap)
+  return done();
+
+};
