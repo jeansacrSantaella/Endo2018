@@ -81,6 +81,10 @@ ng.config(['$routeProvider', '$locationProvider', function($routeProvider, $loca
       templateUrl: 'templates/tecnologicoController.html', //ruta del archivo
       controller: 'tecnologicoController', //nombre del controller
     })
+    .when('/deportista', {
+      templateUrl: 'templates/deportistaController.html', //ruta del archivo
+      controller: 'deportistaController', //nombre del controller
+    })
     .otherwise({
       redirectTo: '/welcome'
     });

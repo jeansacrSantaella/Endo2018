@@ -32,7 +32,7 @@ module.exports = {
       type:'string',
       required:true
     },
-    tecProcendecia:{
+    tecProcedencia:{
       type:'string',
       required:true
     },

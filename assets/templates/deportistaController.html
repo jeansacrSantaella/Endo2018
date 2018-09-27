@@ -1,0 +1,78 @@
+<h1>Deportistas</h1>
+<hr>      
+<div class="row">
+  <div class="col-xs-4">
+    <label for="">Nombre</label>
+  </div>
+  <div class="col-xs-3">
+    <label for="">Nº de Control</label>
+  </div>
+  <div class="col-xs-3">
+    <label for="">Delegación Procedencia (IT-Oaxaca)</label>
+  </div>
+  <div class="col-xs-2">
+    <label for="">Curp</label>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-4">
+    <input type="text" class="form-control" ng-model="deportista.nombre" />
+  </div>
+  <div class="col-xs-3">
+    <input type="text" maxlength="11" class="form-control" ng-model="deportista.numeroControl" />
+  </div>
+  <div class="col-xs-3">	
+      <input type="text" class="form-control" ng-model="deportista.tecProcedencia"/>
+  </div>
+  <div class="col-xs-2">
+    <input type="text" maxlength="18" class="form-control" ng-model="deportista.curp"/>
+  </div>
+</div>
+<br><br><br>
+
+<div class="row">
+    <div class="col-xs-3">
+        <label for=""> NSS </label>
+    </div>
+    <div class="col-xs-4">
+        <label for="">Alergias</label>
+    </div>
+    <div class="col-xs-2">
+        <label for="">Contacto de Emergencia</label>
+    </div>
+    <div class="col-xs-1">
+        <label for="">Genero</label>
+    </div>
+    <div class="col-xs-2">
+        <label for="">Disciplina</label>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-3">
+        <input type="text" maxlength="11" class="form-control" ng-model="deportista.nss" />
+    </div>
+    <div class="col-xs-4">
+        <input type="text" class="form-control" ng-model="deportista.alergias"/>
+    </div>
+    <div class="col-xs-2">	
+        <input type="text" maxlength="13" class="form-control" ng-model="deportista.numeroEmergencia"/>
+    </div>
+    <div class="col-xs-1">
+      <select type="text" class="form-control" ng-model="deportista.genero">
+        <option value="H">H</option>
+        <option value="M">M</option>
+      </select>
+    </div>
+    <div class="col-xs-2">	
+        <select name="Disciplina" class="form-control" ng-model="deportista.disciplina">
+           <option value="Ajedrez">Ajedrez</option> 
+           <option value="Atletismo">Atletismo</option> 
+           <option value="Tenis">Tenis</option>
+           <option value="Futball">Futball</option>
+           <option value="Natación">Natación</option> 
+           <option value="Voleyball">Voleyball</option> 
+        </select>
+    </div>
+</div>

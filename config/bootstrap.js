@@ -23,6 +23,19 @@ module.exports.bootstrap = async function(done) {
       password: await sails.helpers.passwords.hashPassword('12345678')
     });
   }
+  if(await Deportistas.count({curp:'SACJ940613HOCNRS03'})==0){
+    await Deportistas.create({
+      curp:'SACJ940613HOCNRS03',
+      nss:'121212312312',
+      numeroControl:'12161404',
+      nombre: 'Jesus Antonio Santaella Cruz',
+      alergias:'ninguna',
+      numeroEmergencia:'9511620709',
+      tecProcedencia:'IT Oaxaca',
+      genero:'M',
+      disciplina:'Natacion'
+    })
+  }
   // By convention, this is a good place to set up fake data during development.
   //
   // For example:

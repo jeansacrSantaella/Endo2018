@@ -1,6 +1,6 @@
 /*
  * ─── FUENTES INICIAN ────────────────────────────────────────────────────────────
- */
+ 
 @font-face
   {
   font-family: "FontAwesome";
@@ -43,6 +43,7 @@ body{
 .header{
   height:150px;
   padding:150px;
+  font-weight: normal;
   border-bottom:1px solid #ccc;
 }
 .footer{
@@ -50,12 +51,12 @@ body{
   padding:5%;
   border-top:1px solid #ccc;
 }
-p,h1,h2,h3,h4,h5,ul,li{
+/*p,h1,h2,h3,h4,h5,ul,li{
   font-family: "soberanaTitular";
-}
-.fuentelista{
+}*/
+/*.fuentelista{
   font-family: "FontAwesome";
-}
+}*/
 /*
  * ─── Inicia DISCIPLINAS ────────────────────────────────────────────────────────────────
  */
@@ -75,19 +76,18 @@ p,h1,h2,h3,h4,h5,ul,li{
 
  #navbar,#navbar1,#navbar2{
    background-color: #000;
+   font-weight: normal;
    color: #fbfbfb;
  }
  .navbar-inverse{
-  background-image: linear-gradient(to bottom,#0000 0,#000 100%); 
+  background-image: linear-gradient(to bottom,#0000 0,#000 100%);
+  font-weight: normal; 
   color: #fbfbfb;
  }
  .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
    text-shadow: #fbfbfb;
    color: #fbfbfb;
  }
-.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
-  text-shadow: 0 -1px 0 #fbfbfb;
-}
 /*
  * ─── FUENTES INICIAN ────────────────────────────────────────────────────────────────────
  */
@@ -147,22 +147,6 @@ p,h1,h2,h3,h4,h5,ul,li{
 {
   color: white;
 }
-
-/*.navbar-primary {
-  background-color: #000000;
-  bottom: 0px;
-  left: 0px;
-  position: fixed;
-  top: 200px;
-  width: 10%;
-  height: 100%;
-  z-index: 8;
-  overflow:visible !important;
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-}
-*/
 /*
  *
  * HEADER IMAGEN
