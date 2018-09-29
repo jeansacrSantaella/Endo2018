@@ -58,6 +58,27 @@ body{
   font-family: "FontAwesome";
 }*/
 /*
+ * ─── SUBMENU ────────────────────────────────────────────────────────────────────
+ */
+
+ ul li:hover a{
+   background: #000;
+  background-color:black;
+ }
+ .dropdown-menu{
+  background-color:#000;
+ }
+ .dropdown-menu > li > a{
+   color:#ffff;
+ }
+ .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover{
+   color:#ffff;
+   background-color: #000;
+   background-image:-webkit-linear-gradient(top,#000000 ,#ffff 100%)
+
+ }
+  
+/*
  * ─── Inicia DISCIPLINAS ────────────────────────────────────────────────────────────────
  */
   #visible{

@@ -8,10 +8,10 @@
     <label for="">Nombre</label>
   </div>
   <div class="col-xs-2">
-    <label for="">Matricula</label>
+    <label for="">Número de Control</label>
   </div>
   <div class="col-xs-2">
-  </label for="">CURP</label>
+  <label for="">CURP</label>
   </div>
   <div class="col-xs-2">
     <label for="">Disciplina</label>
@@ -25,7 +25,14 @@
     <input type="text" class="form-control" ng-model="alumno.nombre" />
   </div>
   <div class="col-xs-2">
-    <input type="text" class="form-control" ng-model="alumno.matricula" />
+    <!--input type="text" class="form-control" ng-model="alumno.matricula" /-->
+    <input type="text"
+    name="Nº de control"
+    placeholder="Nº de control"
+    maxlength="8"
+    required pattern="[0-9]*"
+    title="El número de control debe contener solo números"
+    class="form-control" ng-model="alumno.matricula" />
   </div>
   <div class="col-xs-2">
     <input type="text" class="form-control" ng-model="alumno.curp" />

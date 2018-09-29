@@ -4,7 +4,7 @@ ng.run(['$rootScope', '$location',function($rootScope, $location) {
     console.log('INTENTO DE CAMBIO DE RUTA, Actual:', current, 'Siguiente:',next);
 
     //si es a una pagina abierta... continuar
-    if (next && next.$$route && (next.$$route.originalPath === '/tecnologico' || next.$$route.originalPath === '/disciplinas' || next.$$route.originalPath === '/evento' || next.$$route.originalPath === '/mapas' || next.$$route.originalPath === '/calendario' || next.$$route.originalPath === '/login' || next.$$route.originalPath === '/acercade' || next.$$route.originalPath === '/welcome')){
+    if (next && next.$$route && (next.$$route.originalPath === '/configuracion' ||next.$$route.originalPath === '/disciplinas' || next.$$route.originalPath === '/evento' || next.$$route.originalPath === '/mapas' || next.$$route.originalPath === '/calendario' || next.$$route.originalPath === '/login' || next.$$route.originalPath === '/acercade' || next.$$route.originalPath === '/welcome')){
       return true;
     }
 

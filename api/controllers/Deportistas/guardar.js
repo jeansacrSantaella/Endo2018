@@ -14,10 +14,10 @@ module.exports = {
         var deportista;
         //Nuevo deportista
         if(!inputs.deportista.id){
-            deportista=await Deportista.create(inputs.deportista);
+            deportista=await Deportistas.create(inputs.deportista);
         }else{
         //existente
-            deportista= await Deportista.update({id:inputs.deportista.id},inputs.deportista);
+            deportista= await Deportistas.update({id:inputs.deportista.id},inputs.deportista);
         }
         sails.log('Resultado Deportista',deportista);
         return exits.success(deportista);

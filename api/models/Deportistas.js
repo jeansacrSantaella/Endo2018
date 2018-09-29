@@ -43,7 +43,7 @@ module.exports = {
     disciplina:{
       type:'string',
       required:true
-    },
+    }
 
 
 

@@ -51,7 +51,8 @@ module.exports.routes = {
   '/alumnos/todos':{action: 'alumnos/todos'},
   '/alumnos/uno':{action: 'alumnos/uno'},
   '/alumnos/borrar':{action: 'alumnos/borrar'},
-  '/tecnologicos/guardar':{action: 'tecnologicos/guardar'}
+  '/tecnologicos/guardar':{action: 'tecnologicos/guardar'},
+  '/deportistas/guardar':{action: 'deportistas/guardar'}
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
   //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗

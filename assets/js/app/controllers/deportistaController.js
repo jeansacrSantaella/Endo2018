@@ -5,11 +5,11 @@ ng.controller('deportistaController', ['$scope', '$http', '$routeParams', '$loca
     */
   
     
-      $scope.guardarTec= function(){
+      $scope.guardarDeportista= function(){
         $http.post('/deportistas/guardar',{deportista:$scope.deportista}).then(
           function success(response){
             console.log('Resultado de guardar:', response);
-            $location.path('/deportista');
+            $location.path('/deportistas');
             alertify.success('Edicion completa.');
           }, function error(err){
             alertify.error('No se pudo guardar.');
