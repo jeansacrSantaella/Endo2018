@@ -1,3 +1,8 @@
+//
+// ─── USUARIOS PING DE SESION ────────────────────────────────────────────────────
+//
+
+  
 module.exports = {
   friendlyName: 'Ping',
   description: 'Ping usuarios.',

@@ -1,0 +1,48 @@
+<h1>
+    Deportistas
+    <a href="#/deportista/nuevo" class="btn btn-primary btn-sm pull-right">
+      <i class="fas fa-plus" aria-hidden></i> Nuevo Deportista
+    </a>
+</h1>
+  <hr>
+  
+  <div class="row">
+    <div class="col-xs-3">
+      <label for="">Nombre</label>
+    </div>
+    <div class="col-xs-3">
+      <label for="">CURP</label>
+    </div>
+    <div class="col-xs-2">
+      <label for="">Tec. Procedencia</label>
+    </div>
+    <div class="col-xs-2">
+      <label for="">Disciplina</label>
+    </div>
+    <div class="col-xs-2">
+    </div>
+  </div>
+  
+  <div class="row" ng-repeat="dep in deportistas">
+    <div class="col-xs-3">
+      <span class="form-control" >{{dep.nombre}}</span>
+    </div>
+    <div class="col-xs-3">
+      <span class="form-control" >{{dep.curp}}</span>
+    </div>
+    <div class="col-xs-2">
+      <span class="form-control">{{dep.tecProcedencia}}</span>
+    </div>
+    <div class="col-xs-2">
+      <span class="form-control">{{dep.disciplina}}</span>
+    </div>
+    <div class="col-xs-2 text-right">
+      <button type="button" class="btn btn-warning btn-sm" ng-click="borrar(a)">
+        <i class="fas fa-trash-alt" aria-hidden></i>
+      </button>
+      <a ng-href="#/deportistas/{{dep.curp}}" class="btn btn-info btn-sm">
+        <i class="fas fa-pencil-alt" aria-hidden></i>
+      </a>
+    </div>
+  </div>
+  

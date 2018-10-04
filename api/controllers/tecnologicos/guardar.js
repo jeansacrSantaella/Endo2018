@@ -1,3 +1,8 @@
+ //
+ // ─── TECNOLOGICO ────────────────────────────────────────────────────────────────
+ //
+
+     
 module.exports = {
   friendlyName:'Guardar',
   description: 'Guardar tecnologicos.',

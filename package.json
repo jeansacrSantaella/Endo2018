@@ -31,9 +31,9 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/erik/practica-2.git"
+    "url": ""
   },
-  "author": "erik",
+  "author": "",
   "license": "",
   "engines": {
     "node": ">=8.11"

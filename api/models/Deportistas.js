@@ -43,7 +43,12 @@ module.exports = {
     disciplina:{
       type:'string',
       required:true
-    }
+    },
+    activo:{
+      type:'boolean',
+      required:false,
+      defaultsTo:true
+    },
 
 
 

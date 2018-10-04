@@ -17,10 +17,15 @@
 
 <div class="row">
   <div class="col-xs-4">
-    <input type="text" class="form-control" ng-model="deportista.nombre" />
+    <input type="text" 
+        name="Nombre completo del participante"
+        placeholder="Nombre" 
+        title="Solo se permiten letras" 
+        required pattern="[A-Za-Z]*" 
+        class="form-control" 
+        ng-model="deportista.nombre" />
   </div>
   <div class="col-xs-2">
-    <!--input type="text" required pattern="[0-9]{8,9}"  class="form-control"   title="Solo números" ng-model="deportista.numeroControl" /-->
    <input type="text"
         class="form-control"
         name="Nº de control"
@@ -32,10 +37,23 @@
 </form>
   </div>
   <div class="col-xs-3">	
-      <input type="text" class="form-control" ng-model="deportista.tecProcedencia"/>
+      <input type="text" 
+        class="form-control" 
+        name="Tecnológico de Procedencia"
+        placeholder="Tecnológico de Procedencia"
+        required 
+        title="Sólo se permiten letras"
+        ng-model="deportista.tecProcedencia"/>
   </div>
   <div class="col-xs-3">
-    <input type="text" maxlength="18" class="form-control" ng-model="deportista.curp"/>
+    <input type="text" 
+        maxlength="18" 
+        class="form-control" 
+        name="Curp"
+        placeholder="CURP"
+        required pattern="[A-Z][A,E,I,O,U,X][A-Z]{2}[0-9]{2}[0-1][0-9][0-3][0-9][M,H][A-Z]{2}[B,C,D,F,G,H,J,K,L,M,N,Ñ,P,Q,R,S,T,V,W,X,Y,Z]{3}[0-9,A-Z][0-9]"
+        title="CURP"
+        ng-model="deportista.curp"/>
   </div>
 </div>
 <br><br><br>
@@ -60,13 +78,32 @@
 
 <div class="row">
     <div class="col-xs-3">
-        <input type="text" maxlength="11" class="form-control" ng-model="deportista.nss" />
+        <input type="text"
+             maxlength="11" 
+             name="NSS" 
+             placeholder="NSS" 
+             required 
+             title="NSS"
+             class="form-control" 
+             ng-model="deportista.nss" />
     </div>
     <div class="col-xs-4">
-        <input type="text" class="form-control" ng-model="deportista.alergias"/>
+        <input type="text" 
+            class="form-control" 
+            name="Alergias"
+            placeholder="Alergias"
+            required title="Solo alergias médicas"
+            ng-model="deportista.alergias"/>
     </div>
     <div class="col-xs-2">	
-        <input type="text" maxlength="13" class="form-control" ng-model="deportista.numeroEmergencia"/>
+        <input type="text" 
+            maxlength="13" 
+            name="Número de Emergencia"
+            placeholder="Número Telefono"
+            required 
+            title="Solo numero de telefono válido"
+            class="form-control" 
+            ng-model="deportista.numeroEmergencia"/>
     </div>
     <div class="col-xs-1">
       <select type="text" class="form-control" ng-model="deportista.genero">
@@ -79,9 +116,9 @@
            <option value="Ajedrez">Ajedrez</option> 
            <option value="Atletismo">Atletismo</option> 
            <option value="Tenis">Tenis</option>
-           <option value="Futball">Futball</option>
+           <option value="Futball">Futbol</option>
            <option value="Natación">Natación</option> 
-           <option value="Voleyball">Voleyball</option> 
+           <option value="Voleyball">Voleibol</option> 
         </select>
     </div>
 </div>
@@ -91,6 +128,15 @@
 </div>
 <div class="row">
     <div class="col-xs-1 text-left" >
+                <button type="button" class="btn btn-dark" ng-class="{'active':main.rutaActual=='/deportistas'}" ng-show="main.UsuarioFactory.usuario.id"
+                onclick="location.href='#/deportistas'">
+                <span class="glyphicon glyphicon-chevron-left">Regresar</span>
+                </button> 
+    </div>
+    <div class="col-xs-10 text-right" >
+                    
+    </div>
+    <div class="col-xs-1 text-right" >
         <button type="button" class="btn btn-primary" ng-click="guardarDeportista()">
             <i class="far fa-save" aria-hidden></i> Guardar
         </button>

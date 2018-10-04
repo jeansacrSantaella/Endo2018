@@ -52,7 +52,10 @@ module.exports.routes = {
   '/alumnos/uno':{action: 'alumnos/uno'},
   '/alumnos/borrar':{action: 'alumnos/borrar'},
   '/tecnologicos/guardar':{action: 'tecnologicos/guardar'},
-  '/deportistas/guardar':{action: 'deportistas/guardar'}
+  '/deportistas/guardar':{action: 'deportistas/guardar'},
+  '/deportistas/todos':{action: 'deportistas/todos'},
+  '/deportistas/uno':{action: 'deportistas/uno'},
+
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
   //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗

@@ -1,4 +1,8 @@
-/*deportista*/
+//
+// ─── DEPORTISTA ─────────────────────────────────────────────────────────────────
+//
+
+    
 module.exports = {
     friendlyName:'Guardar',
     description: 'Guardar deportistas.',

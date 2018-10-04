@@ -1,3 +1,8 @@
+//
+// ─── BUSQUEDA ALUMNO ────────────────────────────────────────────────────────────
+//
+
+  
 module.exports = {
   friendlyName: 'Uno',
   description: 'Uno alumnos.',

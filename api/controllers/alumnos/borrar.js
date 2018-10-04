@@ -1,3 +1,8 @@
+//
+// ─── ALUMNOS BORRAR ─────────────────────────────────────────────────────────────
+//
+
+  
 module.exports = {
   friendlyName: 'Borrar',
   description: 'Borrar alumnos.',

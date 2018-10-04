@@ -1,3 +1,8 @@
+//
+// ─── BUSQUEDA TODOS LOS USUARIOS ────────────────────────────────────────────────
+//
+
+  
 module.exports = {
   friendlyName: 'Todos',
   description: 'Todos usuarios.',

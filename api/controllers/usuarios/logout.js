@@ -1,3 +1,8 @@
+//
+// ─── USUARIOS SALIR LOGOUT ──────────────────────────────────────────────────────
+//
+
+  
 module.exports = {
   friendlyName: 'Logout',
   description: 'Logout usuarios.',
