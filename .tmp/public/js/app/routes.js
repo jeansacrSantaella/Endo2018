@@ -82,11 +82,11 @@ ng.config(['$routeProvider', '$locationProvider', function($routeProvider, $loca
       controller: 'tecnologicoController', //nombre del controller
     })
     .when('/deportistas/:curp', {
-      templateUrl: 'templates/deportistaController.html', //ruta del archivo
+      templateUrl: 'templates/Deportistas/deportistaController.html', //ruta del archivo
       controller: 'deportistaController', //nombre del controller
     })
     .when('/deportistas', {
-      templateUrl: 'templates/deportistasController.html', //ruta del archivo
+      templateUrl: 'templates/Deportistas/deportistasController.html', //ruta del archivo
       controller: 'deportistasController', //nombre del controller
     })
     .otherwise({
