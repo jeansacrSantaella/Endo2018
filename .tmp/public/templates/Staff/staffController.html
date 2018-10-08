@@ -1,0 +1,73 @@
+<h1 align="center">Registro de Staff</h1>
+<br><br>
+  <div class="container">    
+         <form>
+            <div class="form-group row">
+                   <div class="col-xs-4">
+                       <label class="col-xs-20 control-label"> NUMERO DE CONTROL </label>
+                       <input type="text" 
+                              title="EL NUMERO DE CONTROL ESTA MAL" 
+                              class="form-control" 
+                              placeholder="INGRESE NUMERO DE CONTROL"
+                              maxlength="11" pattern="[0-9]*"
+                              ng-model="staff.numeroControl"
+                        required/>
+                   </div>
+            </div> 
+
+            <label for="nomb"> NOMBRE </label>
+             <div class="form-group row">
+                  <div class="col-xs-4">
+                        <input id="input-activo" 
+                              type="text" class="form-control" 
+                              placeholder="NOMBRE"
+                              maxlength="30" minlength="3"
+                              id="nomb"pattern="[A-Za-z]*" 
+                              ng-model="staff.nombre"
+                        required/>
+                  </div>
+                  <div class="col-xs-4">
+                        <input type="text" class="form-control" 
+                              placeholder="APELLIDO PATERNO" 
+                              maxlength="30" minlength="2"
+                              pattern="[A-Za-z]*" 
+                              ng-model="staff.apellidoPaterno"
+                        required/>
+                  </div>
+                  <div class="col-xs-4">
+                        <input type="text" class="form-control" 
+                              placeholder="APELLIDO MATERNO" 
+                              maxlength="30" minlength="2"
+                              pattern="[A-Za-z]*" 
+                              ng-model="staff.apellidoMaterno"
+                        required>
+                  </div>
+             </div>
+            <label for="genero" class="col-xs-4 control-label">GENERO:</label>
+            <label for="tel"class="col-xs-6 control-label">TELEFONO: </label>
+            <div class="form-group row">
+                  <div class="col-xs-4">
+                        <select class="form-control" id="genero" 
+                              placeholder="SELECCIONA GENERO" 
+                              ng-model="staff.genero"
+                              required >
+                             <option>HOMBRE</option>
+                             <option>MUJER</option>
+                        </select>   
+                  </div>  
+                 <div class="col-xs-4"> 
+                        <input type="tel" class="form-control" 
+                        placeholder="9511155975"   
+                        minlength="10" maxlength="13"
+                        pattern="[0-9]*"
+                        ng-model="staff.telefono"
+                  required>
+                 </div> 
+          </div>
+    <br><br>
+          <div id="botonRegistrar">
+                   <button type="submit" class="btn btn-primary" ng-click="guardarStaff()">Registrar</button>
+           </div>	
+
+    </form>
+ </div>

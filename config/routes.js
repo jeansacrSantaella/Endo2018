@@ -55,6 +55,9 @@ module.exports.routes = {
   '/deportistas/guardar':{action: 'deportistas/guardar'},
   '/deportistas/todos':{action: 'deportistas/todos'},
   '/deportistas/uno':{action: 'deportistas/uno'},
+  '/staff/guardar':{action:'staff/guardar'},
+  '/staff/todos':{action:'staff/todos'},
+  '/staff/uno':{action:'staff/uno'},
 
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
