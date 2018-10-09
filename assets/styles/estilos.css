@@ -279,4 +279,20 @@ font-family: "soberanaTitular";
  * ─────────────────────────────────────────────────────────────── FIN TITULO ─────
  */
 
+  /*
+   * ───────────────────────────────────────────────────────────────────────── Foto de perfil ─────
+   */
+   .perfil-thumb{
+    margin:0 auto;
+    width: 100px;
+    height: 130px;
+    padding:10px;
+    border: 1px solid #444;
+    box-shadow: 0 0 5px #444;
+  }
   
+  .perfil-thumb img{
+    max-width: 80px;
+    max-height: 110px;
+  }
+    

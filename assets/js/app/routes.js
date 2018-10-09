@@ -81,7 +81,7 @@ ng.config(['$routeProvider', '$locationProvider', function($routeProvider, $loca
       templateUrl: 'templates/tecnologicoController.html', //ruta del archivo
       controller: 'tecnologicoController', //nombre del controller
     })
-    .when('/deportistas/:curp', {
+    .when('/deportista/:curp', {
       templateUrl: 'templates/Deportistas/deportistaController.html', //ruta del archivo
       controller: 'deportistaController', //nombre del controller
     })
@@ -89,9 +89,13 @@ ng.config(['$routeProvider', '$locationProvider', function($routeProvider, $loca
       templateUrl: 'templates/Deportistas/deportistasController.html', //ruta del archivo
       controller: 'deportistasController', //nombre del controller
     })
-    .when('/staff', {
+    .when('/staff/:numeroControl', {
       templateUrl: 'templates/Staff/staffController.html', //ruta del archivo
       controller: 'staffController', //nombre del controller
+    })
+    .when('/staffs', {
+      templateUrl: 'templates/Staff/staffsController.html', //ruta del archivo
+      controller: 'staffsController', //nombre del controller
     })
     .otherwise({
       redirectTo: '/welcome'

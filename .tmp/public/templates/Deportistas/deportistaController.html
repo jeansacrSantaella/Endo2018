@@ -1,5 +1,47 @@
-<h1>Deportista</h1>
-<hr>      
+<h1>
+    <span ng-show="!deportista.curp">
+      Nuevo Alumno
+    </span>
+    <span ng-show="deportista.curp">
+      {{deportista.nombre}}
+    </span>
+  </h1>
+  <br><br>
+
+  <hr>
+  <div class="row separado text-center" ng-if="deportista.curp">
+    <div class="col-xs-6 text-center">
+      <div class="perfil-thumb">
+        <img ng-src="/images/thumb.png" ng-if="!deportista.foto">
+        <img ng-src="/images/DeportistasFotos/{{deportista.curp}}.jpg?r={{r}}" ng-if="deportista.foto">
+      </div>
+    </div>
+    <div class="col-xs-6 text-center">
+      <div id="elqrcode"></div>
+    </div>
+  </div>
+  
+    <div class="row separado text-center" ng-if="deportista.curp">
+      <div class="col-xs-6">
+        <form name="form">
+          <button type="button" ngf-select="subirFoto($file)" ng-model="file" name="file" ngf-pattern="'image/jpeg'" class="btn btn-default btn-xs" ngf-accept="'image/jpeg'" ngf-max-size="2MB" ngf-min-height="100">
+            <i class="far fa-image" aria-hidden></i>
+            <span ng-show="!deportista.foto">Agregar </span>
+            <span ng-show="deportista.foto">Cambiar </span>
+            Fotografía
+            <span ng-show="subiendoFoto">
+              {{porcentaje}}%
+            </span>
+          </button>
+        </form>
+      </div>
+      <div class="col-xs-6 text-center">
+        {{deportista.curp}}
+      </div>
+    </div>
+
+
+<br><br>
 <div class="row">
   <div class="col-xs-4">
     <label for="">Nombre</label>
@@ -21,7 +63,7 @@
         name="Nombre completo del participante"
         placeholder="Nombre" 
         title="Solo se permiten letras" 
-        required pattern="[A-Za-Z]*" 
+        pattern="[A-Za-Z ]*" 
         class="form-control" 
         ng-model="deportista.nombre" />
   </div>
@@ -31,7 +73,7 @@
         name="Nº de control"
         placeholder="Nº de control"
         maxlength="8"
-        required pattern="[0-9]*"
+        pattern="[0-9]*"
         title="El número de control debe contener solo números"
         ng-model="deportista.numeroControl" />
 </form>
@@ -41,7 +83,6 @@
         class="form-control" 
         name="Tecnológico de Procedencia"
         placeholder="Tecnológico de Procedencia"
-        required 
         title="Sólo se permiten letras"
         ng-model="deportista.tecProcedencia"/>
   </div>
@@ -51,7 +92,7 @@
         class="form-control" 
         name="Curp"
         placeholder="CURP"
-        required pattern="[A-Z][A,E,I,O,U,X][A-Z]{2}[0-9]{2}[0-1][0-9][0-3][0-9][M,H][A-Z]{2}[B,C,D,F,G,H,J,K,L,M,N,Ñ,P,Q,R,S,T,V,W,X,Y,Z]{3}[0-9,A-Z][0-9]"
+         pattern="[A-Z][A,E,I,O,U,X][A-Z]{2}[0-9]{2}[0-1][0-9][0-3][0-9][M,H][A-Z]{2}[B,C,D,F,G,H,J,K,L,M,N,Ñ,P,Q,R,S,T,V,W,X,Y,Z]{3}[0-9,A-Z][0-9]"
         title="CURP"
         ng-model="deportista.curp"/>
   </div>
@@ -82,7 +123,6 @@
              maxlength="11" 
              name="NSS" 
              placeholder="NSS" 
-             required 
              title="NSS"
              class="form-control" 
              ng-model="deportista.nss" />
@@ -92,7 +132,7 @@
             class="form-control" 
             name="Alergias"
             placeholder="Alergias"
-            required title="Solo alergias médicas"
+             title="Solo alergias médicas"
             ng-model="deportista.alergias"/>
     </div>
     <div class="col-xs-2">	
@@ -100,7 +140,6 @@
             maxlength="13" 
             name="Número de Emergencia"
             placeholder="Número Telefono"
-            required 
             title="Solo numero de telefono válido"
             class="form-control" 
             ng-model="deportista.numeroEmergencia"/>
@@ -113,7 +152,7 @@
     </div>
     <div class="col-xs-2">	
         <select name="Disciplina" class="form-control" ng-model="deportista.disciplina">
-           <option value="Ajedrez">Ajedrez</option> 
+           <option value="Ajedrez" selected>Ajedrez</option> 
            <option value="Atletismo">Atletismo</option> 
            <option value="Tenis">Tenis</option>
            <option value="Futball">Futbol</option>

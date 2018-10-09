@@ -47,14 +47,19 @@ module.exports.routes = {
   '/auth/login':{ action: 'auth/login'},
   '/usuarios/get-all':{action: 'usuarios/todos'},
   '/usuarios/ping':{action: 'usuarios/ping'},
+
   '/alumnos/guardar':{action: 'alumnos/guardar'},
   '/alumnos/todos':{action: 'alumnos/todos'},
   '/alumnos/uno':{action: 'alumnos/uno'},
   '/alumnos/borrar':{action: 'alumnos/borrar'},
   '/tecnologicos/guardar':{action: 'tecnologicos/guardar'},
+
+
+  '/deportistas/subir-foto':{action: 'deportistas/subir-foto'},
   '/deportistas/guardar':{action: 'deportistas/guardar'},
   '/deportistas/todos':{action: 'deportistas/todos'},
   '/deportistas/uno':{action: 'deportistas/uno'},
+  
   '/staff/guardar':{action:'staff/guardar'},
   '/staff/todos':{action:'staff/todos'},
   '/staff/uno':{action:'staff/uno'},

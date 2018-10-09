@@ -5,12 +5,13 @@ ng.controller('staffController', ['$scope', '$http', '$routeParams', '$location'
     */
     $scope.$on('$viewContentLoaded', () => {
       $scope.staff = {};
-        if($routeParams.curp!=='nuevo'){
-        $http.post('/staff/uno',{curp:$routeParams.curp}).then(
+        if($routeParams.numeroControl!=='nuevo'){
+        $http.post('/staff/uno',{numeroControl:$routeParams.numeroControl}).then(
           function success(response){
             console.log('respuesta de obtener staff:', response);
-            if(response.data && response.data.curp){
+            if(response.data && response.data.numeroControl){
               $scope.staff = response.data;
+              
             }
           },
           function error(error){
@@ -25,7 +26,7 @@ ng.controller('staffController', ['$scope', '$http', '$routeParams', '$location'
         $http.post('/staff/guardar',{staff:$scope.staff}).then(
           function success(response){
             console.log('Resultado de guardar:', response);
-            $location.path('/staff');
+            $location.path('/staffs');
             alertify.success('Edicion completa.');
           }, function error(err){
             alertify.error('No se pudo guardar.');

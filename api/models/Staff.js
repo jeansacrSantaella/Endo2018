@@ -32,6 +32,11 @@ module.exports = {
       type:'string',
       required:true
     },
+    tareaAsignada:{
+      type:'string',
+      required:false,
+      defaultsTo:"Ninguna"
+    },
     activo:{
       type:'boolean',
       required:false,

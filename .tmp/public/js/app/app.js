@@ -1,5 +1,5 @@
 /*eslint-disable no-unused-vars*/
-var ng = angular.module('miApp', ['ngRoute']);
+var ng = angular.module('miApp', ['ngRoute','ngFileUpload']);
 
 ng.run(['$rootScope', '$location', '$http', 'UsuarioFactory', function($rootScope, $location, $http, UsuarioFactory){
   console.log('Etapa RUN!');
