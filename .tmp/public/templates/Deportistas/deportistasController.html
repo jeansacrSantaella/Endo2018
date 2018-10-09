@@ -1,6 +1,6 @@
 <h1>
     Deportistas
-    <a href="#/deportistas/nuevo" class="btn btn-primary btn-sm pull-right">
+    <a href="#/deportista/nuevo" class="btn btn-primary btn-sm pull-right">
       <i class="fas fa-plus" aria-hidden></i> Nuevo Deportista
     </a>
 </h1>
@@ -37,10 +37,13 @@
       <span class="form-control">{{dep.disciplina}}</span>
     </div>
     <div class="col-xs-2 text-right">
+        <button type="button" class="btn btn-info btn-sm" ng-click="imprimir(a)">
+            <i class="fas fa-print" aria-hidden></i>
+          </button>
       <button type="button" class="btn btn-warning btn-sm" ng-click="borrar(a)">
         <i class="fas fa-trash-alt" aria-hidden></i>
       </button>
-      <a ng-href="#/deportistas/{{dep.curp}}" class="btn btn-info btn-sm">
+      <a ng-href="#/deportista/{{dep.curp}}" class="btn btn-info btn-sm">
         <i class="fas fa-pencil-alt" aria-hidden></i>
       </a>
     </div>

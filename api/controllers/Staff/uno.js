@@ -9,7 +9,7 @@ module.exports = {
     friendlyName: 'Uno',
     description: 'Un miebro de Staff.',
     inputs: {
-      curp:{
+      numeroControl:{
         type:'string',
         required:true
       }
@@ -18,7 +18,7 @@ module.exports = {
   
     },
     fn: async function (inputs, exits) {
-      return exits.success(await Staff.findOne({curp:inputs.curp}));
+      return exits.success(await Staff.findOne({numeroControl:inputs.numeroControl}));
     }
 
 };

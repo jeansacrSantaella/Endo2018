@@ -7,7 +7,7 @@
 
 module.exports = {
     friendlyName:'Todos',
-    description: 'Todos los desportistas.',
+    description: 'Todos los deportistas.',
     inputs:{
 
     },
@@ -15,7 +15,7 @@ module.exports = {
 
     },
     fn: async function (inputs,exits){
-        return exits.success(await Deportistas.find());
+        return exits.success(await Deportistas.find({activo:true}));
     }
 
 };

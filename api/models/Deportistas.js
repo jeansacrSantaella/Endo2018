@@ -44,6 +44,14 @@ module.exports = {
       type:'string',
       required:true
     },
+    foto:{
+      type:'boolean',
+      defaultsTo:false
+    },
+    direccionFoto:{
+      type:'json',
+      required:false
+    },
     activo:{
       type:'boolean',
       required:false,
