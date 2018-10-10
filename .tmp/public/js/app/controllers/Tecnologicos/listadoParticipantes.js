@@ -19,6 +19,7 @@ ng.controller('listadoParticipantes', ['$scope', '$http','$timeout','$routeParam
           console.log('Respuesta de obtener todos los deportista:', response);
           if (response.data) {
             $scope.deportistas = response.data;
+            $scope.nombreTec=response.data[0].tecProcedencia;
           }
         },
         function error(error) {
