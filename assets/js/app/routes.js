@@ -77,9 +77,9 @@ ng.config(['$routeProvider', '$locationProvider', function($routeProvider, $loca
       templateUrl: 'templates/disciplinasController.html', //ruta del archivo
       controller: 'disciplinasController', //nombre del controller
     })
-    .when('/tecnologico', {
-      templateUrl: 'templates/tecnologicoController.html', //ruta del archivo
-      controller: 'tecnologicoController', //nombre del controller
+    .when('/tecnologicos', {
+      templateUrl: 'templates/Tecnologicos/tecnologicosController.html', //ruta del archivo
+      controller: 'tecnologicosController', //nombre del controller
     })
     .when('/deportista/:curp', {
       templateUrl: 'templates/Deportistas/deportistaController.html', //ruta del archivo

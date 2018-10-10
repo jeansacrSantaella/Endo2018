@@ -5,7 +5,7 @@
     
 module.exports = {
     friendlyName: 'Todos',
-    description: 'Todos staff.',
+    description: 'Todos los miebros de staff del tecnologico sede.',
     inputs: {
   
     },

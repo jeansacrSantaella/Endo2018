@@ -52,8 +52,10 @@ module.exports.routes = {
   '/alumnos/todos':{action: 'alumnos/todos'},
   '/alumnos/uno':{action: 'alumnos/uno'},
   '/alumnos/borrar':{action: 'alumnos/borrar'},
-  '/tecnologicos/guardar':{action: 'tecnologicos/guardar'},
 
+  '/tecnologicos/guardar':{action: 'tecnologicos/guardar'},
+  '/tecnologicos/todos':{action: 'tecnologicos/todos'},
+  '/tecnologicos/uno':{action: 'tecnologicos/uno'},
 
   '/deportistas/subir-foto':{action: 'deportistas/subir-foto'},
   '/deportistas/guardar':{action: 'deportistas/guardar'},

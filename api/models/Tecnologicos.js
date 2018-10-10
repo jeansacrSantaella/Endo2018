@@ -16,7 +16,7 @@ module.exports = {
       type:'string',
       required:true
     },
-    direccion:{
+    nombreCorto:{
       type:'string',
       required:true
     }

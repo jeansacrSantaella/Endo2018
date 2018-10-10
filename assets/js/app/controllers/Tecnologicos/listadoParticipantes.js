@@ -1,8 +1,8 @@
-ng.controller('deportistasController', ['$scope', '$http','$timeout','$routeParams', 
+ng.controller('listadoParticipantes', ['$scope', '$http','$timeout','$routeParams', 
   function($scope, $http, $timeout,$routeParams) {
 
     /*
-      1.- ir por mis deportistas activos
+      1.- ir por mis deportistas
       2.- listarlos
       3.- cuando le den click a uno, abrirlo
       4.- opcion de inhabilitarlo

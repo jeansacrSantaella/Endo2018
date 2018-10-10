@@ -1,4 +1,5 @@
-ng.controller('deportistasController', ['$scope', '$http','$timeout','$routeParams', function($scope, $http, $timeout,$routeParams) {
+ng.controller('deportistasController', ['$scope', '$http','$timeout','$routeParams', 
+  function($scope, $http, $timeout,$routeParams) {
 
     /*
       1.- ir por mis deportistas activos

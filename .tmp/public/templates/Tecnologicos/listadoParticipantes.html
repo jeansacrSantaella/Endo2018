@@ -1,0 +1,22 @@
+<h2 align="center">Lista de Participantes</h2>
+<br>
+<br>
+<div class="panel panel-default">
+    <div class="panel-body">
+      <table ng-init='configPages()'class='table' id="mytable">
+        <thead>
+          <tr>
+            <th>NOMBRE</th>
+            <th> Asistencia</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat='dep in deportistas| startFromGrid: currentPage * pageSize | limitTo:pageSize', ng-click='seleccionarUsuario (dep.nombre)'>
+            <td> 
+                <input type="checkbox" name="deportista" value="1"checked>{{dep.nombre}}<br>
+            </td>
+        </tbody>
+    </div>
+
+

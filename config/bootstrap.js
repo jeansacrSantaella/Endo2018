@@ -37,6 +37,13 @@ module.exports.bootstrap = async function(done) {
       disciplina:'Natacion'
     })
   }*/
+  if(await Tecnologicos.count({numero:'16'})==0){
+    await Tecnologicos.create({
+      numero:'16',
+      nombre:'Instituto Tecnológico de Oaxaca',
+      nombreCorto:'IT-Oaxaca'
+    })
+  }
   // By convention, this is a good place to set up fake data during development.
   //
   // For example:
