@@ -8,46 +8,26 @@ ng.controller('listadoParticipantes', ['$scope', '$http','$timeout','$routeParam
       4.- opcion de inhabilitarlo
     */
   
-    $scope.$on('$viewContentLoaded', () => {
-      $scope.deportistas = [];
-      $scope.refresh();
-    });
-  
-    $scope.refresh = function() {
-      $http.get('/deportistas/todos').then(
-        function success(response) {
-          console.log('Respuesta de obtener todos los deportista:', response);
-          if (response.data) {
-            $scope.deportistas = response.data;
-            $scope.nombreTec=response.data[0].tecProcedencia;
-          }
-        },
-        function error(error) {
-          alertify.error('Se produjo un error al obtener los deportistas.');
-          console.log('error al obtener deportistas:', error);
+    
+   $scope.$on('$viewContentLoaded', () => {
+    $scope.deportistasTec = [];
+    $scope.refresh();
+  });
+
+  $scope.refresh = function() {
+    $http.post('/deportistas/todos-tec',{tecProcedencia:$routeParams.tecProcedencia}).then(
+      function success(response) {
+        console.log('Respuesta de obtener todos los deportista:', response);
+        if (response.data) {
+          $scope.deportistasTec = response.data;
         }
-      );
-    };
-  
-    $scope.borrar = function(deportista) {
-      alertify.confirm('Borrar Deportista', '¿Está Seguro que desea eliminar a '+deportista.nombre+'?', () => {
-  
-        $http.post('/deportistas/borrar', {
-          id: deportista.id
-        }).then(
-          function success(response) {
-            console.log('Resultado de borrar:', response);
-            $timeout(() => {
-              $scope.refresh();
-            });
-            alertify.success('Borrado satisfactorio.');
-          },
-          function error(err) {
-            alertify.error('No se pudo borrar el deportista.');
-            console.log('Error al guardar:', err);
-          }
-        );
-      }, () => {});
-    };
-  }]);
-  
+      },
+      function error(error) {
+        alertify.error('Se produjo un error al obtener los deportistas.');
+        console.log('error al obtener deportistas:', error);
+      }
+    );
+  };
+
+
+}]);

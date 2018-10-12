@@ -9,14 +9,16 @@ module.exports = {
     friendlyName:'Todos',
     description: 'Todos los deportistas por tec.',
     inputs:{
-        tecProcedencia:'string',
-        required:true
+        tecProcedencia:{
+            type:'string',
+            required:true
+          }
     },
     exits:{
 
     },
     fn: async function (inputs,exits){
-        return exits.success(await Deportistas.find({tecProcedencia:input.tecProcedencia}));
+        return exits.success(await Deportistas.find({tecProcedencia:inputs.tecProcedencia}));
     }
 
 };
