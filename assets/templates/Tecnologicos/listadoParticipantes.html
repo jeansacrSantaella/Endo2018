@@ -54,9 +54,12 @@
             <td>
               {{dep.nombre}}
                 <div class="material-switch pull-right">
-                    <input id="{{dep.nombre}}" name="someSwitchOption001" type="checkbox"/>
+                    <input id="{{dep.nombre}}" name="someSwitchOption001"  
+                         ng-click='activarDeportista(dep.curp)'
+                        type="checkbox"/>
                     <label for="{{dep.nombre}}" class="label-info"></label>
                 </div>
+               
             </td>
         </tbody>
     </div>

@@ -55,7 +55,7 @@ module.exports = {
     activo:{
       type:'boolean',
       required:false,
-      defaultsTo:true
+      defaultsTo:false
     },
 
 

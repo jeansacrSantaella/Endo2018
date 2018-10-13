@@ -29,5 +29,20 @@ ng.controller('listadoParticipantes', ['$scope', '$http','$timeout','$routeParam
     );
   };
 
+  $scope.activarDeportista= function($curp){
+    $http.post('/deportistas/activar',{
+        curp:$curp
+    }).then(
+      function success(response){
+        console.log('Resultado de guardar:', response);
+        alertify.success('Activación completa.');
+      }, function error(err){
+        alertify.error('No se pudo activar.');
+        console.log('Error al activar:', err);
+      }
+    );$scope.refresh();
+  };
+
+
 
 }]);

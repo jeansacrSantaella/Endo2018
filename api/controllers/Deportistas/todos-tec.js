@@ -18,7 +18,7 @@ module.exports = {
 
     },
     fn: async function (inputs,exits){
-        return exits.success(await Deportistas.find({tecProcedencia:inputs.tecProcedencia}));
+        return exits.success(await Deportistas.find({tecProcedencia:inputs.tecProcedencia} && {activo:false}));
     }
 
 };

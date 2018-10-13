@@ -60,6 +60,7 @@ module.exports.routes = {
   '/deportistas/subir-foto':{action: 'deportistas/subir-foto'},
   '/deportistas/todos-tec':{action: 'deportistas/todos-tec'},
   '/deportistas/guardar':{action: 'deportistas/guardar'},
+  '/deportistas/activar':{action: 'deportistas/activar'},
   '/deportistas/todos':{action: 'deportistas/todos'},
   '/deportistas/uno':{action: 'deportistas/uno'},
   

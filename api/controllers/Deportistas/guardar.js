@@ -21,7 +21,7 @@ module.exports = {
             deportista=await Deportistas.create(inputs.deportista);
         }else{
         //existente
-            deportista= await Deportistas.update({id:inputs.deportista.id},inputs.deportista);
+            deportista=await Deportistas.update({id:inputs.deportista.id},inputs.deportista);
         }
         sails.log('Resultado Deportista',deportista);
         return exits.success(deportista);
