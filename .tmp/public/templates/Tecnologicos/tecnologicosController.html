@@ -29,14 +29,12 @@
             <table ng-init='configPages()'class='table' id="mytable">
               <thead>
                 <tr>
-                  <th>Numero de Tecnológico</th>
                   <th>Nombre de Tecnológico</th>
                   <th>Asistencia</th>
                 </tr>
               </thead>
               <tbody>
                 <tr ng-repeat='tec in tecnologicos | startFromGrid: currentPage * pageSize | limitTo:pageSize', ng-click='seleccionarUsuario (tec.nombre)'>
-                  <td>{{tec.numero}}</td>
                   <td>{{tec.nombre}}</td>
                   <td> 
                     <a ng-href="#/tecnologicos/{{tec.nombre}}" class="btn btn-info btn-sm">

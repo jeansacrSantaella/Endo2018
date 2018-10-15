@@ -23,20 +23,23 @@ module.exports.bootstrap = async function(done) {
       password: await sails.helpers.passwords.hashPassword('12345678')
     });
   }
-  /*
+  
   if(await Deportistas.count({curp:'SACJ940613HOCNRS03'})==0){
     await Deportistas.create({
       curp:'SACJ940613HOCNRS03',
       nss:'121212312312',
       numeroControl:'12161404',
+      foto:false,
       nombre: 'Jesus Antonio Santaella Cruz',
       alergias:'ninguna',
       numeroEmergencia:'9511620709',
       tecProcedencia:'IT Oaxaca',
       genero:'M',
-      disciplina:'Natacion'
+      disciplina:'Natacion',
+      tipodeSangre:'ORH+',
+      activo:false
     })
-  }*/
+  }
   if(await Tecnologicos.count({numero:'16'})==0){
     await Tecnologicos.create({
       numero:'16',

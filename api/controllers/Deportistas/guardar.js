@@ -18,6 +18,12 @@ module.exports = {
         var deportista;
         //Nuevo deportista
         if(!inputs.deportista.id){
+            if(await Tecnologicos.count({nombre:inputs.deportista.tecProcedencia})==0){
+                await Tecnologicos.create({
+                    nombre:inputs.deportista.tecProcedencia,
+                    nombreCorto:'IT'
+                });
+            }
             deportista=await Deportistas.create(inputs.deportista);
         }else{
         //existente

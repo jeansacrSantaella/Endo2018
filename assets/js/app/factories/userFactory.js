@@ -11,7 +11,7 @@ ng.factory('UsuarioFactory', ['$http', '$location', '$timeout',function($http, $
             //Tenemos sesion!
             self.usuario = response.data.usuario;
             localStorage.setItem('usuario', JSON.stringify(response.data.usuario)); //almacenarlo en duro en el navegador.
-            $location.path('/dashboard').replace();
+            $location.path('/welcome').replace();
           }
         },
         function error(error){

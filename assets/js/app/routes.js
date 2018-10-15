@@ -13,7 +13,7 @@ ng.run(['$rootScope', '$location',function($rootScope, $location) {
       console.log('Acceso denegado, redireccionando a login');
       event.preventDefault();
       $location.path('/welcome').replace();
-      //$location.path('/login').replace();direccionamiento a login
+      $location.path('/login').replace();//direccionamiento a login
       return false;
     }
   });
@@ -34,15 +34,15 @@ ng.config(['$routeProvider', '$locationProvider', function($routeProvider, $loca
   $locationProvider.hashPrefix(''); //quitar el ! de las rutas
   $routeProvider
     .when('/login', { //configuracion de rutas
-      templateUrl: 'templates/loginController.html', //ruta del archivo
+      templateUrl: 'templates/VistasPrincipales/loginController.html', //ruta del archivo
       controller: 'loginController', //nombre del controller
     })
     .when('/dashboard', {
-      templateUrl: 'templates/dashboardController.html', //ruta del archivo
+      templateUrl: 'templates/VistasPrincipales/dashboardController.html', //ruta del archivo
       controller: 'dashboardController', //nombre del controller
     })
     .when('/acercade', {
-      templateUrl: 'templates/acercadeController.html', //ruta del archivo
+      templateUrl: 'templates/VistasPrincipales/acercadeController.html', //ruta del archivo
       controller: 'acercadeController', //nombre del controller
     })
     .when('/alumnos', {
@@ -58,11 +58,11 @@ ng.config(['$routeProvider', '$locationProvider', function($routeProvider, $loca
       controller: 'welcomeController', //nombre del controller
     })
     .when('/mapas', {
-      templateUrl: 'templates/mapasController.html', //ruta del archivo
+      templateUrl: 'templates/VistasPrincipales/mapasController.html', //ruta del archivo
       controller: 'mapasController', //nombre del controller
     })
     .when('/calendario', {
-      templateUrl: 'templates/calendarioController.html', //ruta del archivo
+      templateUrl: 'templates/VistasPrincipales/calendarioController.html', //ruta del archivo
       controller: 'calendarioController', //nombre del controller
     })
     .when('/disciplina', {
@@ -70,7 +70,7 @@ ng.config(['$routeProvider', '$locationProvider', function($routeProvider, $loca
       controller: 'disciplinaController', //nombre del controller
     })
     .when('/evento', {
-      templateUrl: 'templates/eventoController.html', //ruta del archivo
+      templateUrl: 'templates/VistasPrincipales/eventoController.html', //ruta del archivo
       controller: 'eventoController', //nombre del controller
     })
     .when('/disciplinas', {

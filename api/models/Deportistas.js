@@ -8,29 +8,41 @@
 module.exports = {
 
   attributes: {
-    curp:{
-      type:'string',
-      required:true
-    },
-    nss:{
-      type:'string',
-      required:true
-   },
     numeroControl:{
       type:'string',
       required:true
+    },
+    foto:{
+      type:'boolean',
+      defaultsTo:false
     },
     nombre:{
       type:'string',
       required:true
     },
+    curp:{
+      type:'string',
+      required:true
+    },
+    padecimientos:{
+      type:'string',
+      required:false
+    },
     alergias:{
       type:'string',
       required:false
     },
-    numeroEmergencia:{
+   tipodeSangre:{
+    type:'string',
+    required:true
+   },
+    nss:{
       type:'string',
       required:true
+   },
+    numeroEmergencia:{
+      type:'string',
+      required:false
     },
     tecProcedencia:{
       type:'string',
@@ -44,10 +56,7 @@ module.exports = {
       type:'string',
       required:true
     },
-    foto:{
-      type:'boolean',
-      defaultsTo:false
-    },
+
     direccionFoto:{
       type:'json',
       required:false
