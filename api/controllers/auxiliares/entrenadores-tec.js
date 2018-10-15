@@ -1,8 +1,8 @@
 
 
 module.exports = {
-    friendlyName:'Todos',
-    description: 'Todos los entrenador por tec.',
+    friendlyName:'Todos auxiliares',
+    description: 'Todos los diferentes a entrenador por tec.',
     inputs:{
         tecProcedencia:{
             type:'string',

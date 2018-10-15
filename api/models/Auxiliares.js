@@ -14,7 +14,7 @@ module.exports = {
     },
     disciplinas:{
       type:'string',
-      required:true
+      required:false
     },
     tecOrigen:{
       type:'string',

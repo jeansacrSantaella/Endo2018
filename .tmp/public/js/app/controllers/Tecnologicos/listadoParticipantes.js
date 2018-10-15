@@ -4,6 +4,7 @@ ng.controller('listadoParticipantes', ['$scope', '$http','$timeout','$routeParam
    $scope.$on('$viewContentLoaded', () => {
     $scope.deportistasTec = [];
     $scope.entrenadores = [];
+    $scope.otros = [];
     $scope.nombreTec=$routeParams.tecProcedencia;
     $scope.opc=1;
     $scope.refresh();
@@ -29,6 +30,18 @@ ng.controller('listadoParticipantes', ['$scope', '$http','$timeout','$routeParam
         console.log('Respuesta de obtener todos los deportista:', response);
         if (response.data) {
           $scope.entrenadores = response.data;
+        }
+      },
+      function error(error) {
+        alertify.error('Se produjo un error al obtener los deportistas.');
+        console.log('error al obtener deportistas:', error);
+      }
+    );
+    $http.post('/auxiliares/otros-tec',{tecProcedencia:$routeParams.tecProcedencia}).then(
+      function success(response) {
+        console.log('Respuesta de obtener todos los deportista:', response);
+        if (response.data) {
+          $scope.otros = response.data;
         }
       },
       function error(error) {

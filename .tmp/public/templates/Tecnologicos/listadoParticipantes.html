@@ -51,11 +51,10 @@
     </div>
 </div>  
 <br>
-{{opc}}
 <hr>
-<div  ng-if="opc===2" class="panel panel-default">
+<div  class="panel panel-default">
     <div class="panel-body">
-        <table ng-init='configPages()'class='table' id="mytable">
+        <table ng-if="opc===2" ng-init='configPages()'class='table' id="mytable">
             <thead>
             <tr>
                 <th>Asistencia</th>
@@ -76,12 +75,9 @@
                 </div>
             </td>
         </tbody>
-    </div>
-</div>
 
-<div ng-if="opc===1" class="panel panel-default">
-    <div class="panel-body">
-      <table ng-init='configPages()'class='table' id="mytable">
+
+      <table ng-if="opc===1" ng-init='configPages()'class='table' id="mytable">
         <thead>
           <tr>
             <th>Nombre</th>
@@ -102,8 +98,34 @@
                 </div>     
             </td>
         </tbody>
+
+        <table ng-if="opc===3" ng-init='configPages()'class='table' id="mytable">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Asistencia</th>
+          </tr>
+        </thead>
+       <tbody>
+          <tr ng-repeat='otr in otros| startFromGrid: currentPage * pageSize | limitTo:pageSize', ng-click='seleccionarUsuario (otr.nombre)'>
+            <td>{{otr.nombre}}<td>
+            <td>{{otr.tipo}}</td>
+            <td>
+                <div class="material-switch pull-right">
+                    <input id="{{otr.nombre}}" name="someSwitchOption001"  
+                         ng-click='activarDeportista(dep.curp)'
+                        type="checkbox"/>
+                    <label for="{{otr.nombre}}" class="label-info"></label>
+                </div>     
+            </td>
+        </tbody>
+
     </div>
 </div>
+
+
+
 
 
 
