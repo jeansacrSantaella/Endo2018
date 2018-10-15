@@ -21,7 +21,21 @@
   <left><label>Busqueda </label></left><br>
       <center><input type="text" class="form-control pull-left" style="width:20%" id="search" placeholder="Nombre o disciplina...."></center>
 </div>
-<br>
+<br><br>
+<div class="row">
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-6">
+        <select class="form-control" >
+           <option  ng-click='opcion(1)' value="Entrenadores" selected>Entrenadores</option> 
+           <option  ng-click='opcion(2)' value="Estudiantes">Estudiantes</option> 
+           <option  ng-click='opcion(3)' value="otros">Personal de Apoyo</option>
+        </select>
+    </div>
+    <div class="col-xs-3"></div>
+<div>
+<br><br>
+
 <div class="row">
     <div class="col-xs-1 text-left" >
                 <button type="button" class="btn btn-dark" ng-class="{'active':main.rutaActual=='/tecnologicos'}" ng-show="main.UsuarioFactory.usuario.id"
@@ -37,19 +51,20 @@
     </div>
 </div>  
 <br>
+{{opc}}
 <hr>
-<div class="panel panel-default">
+<div  ng-if="opc===2" class="panel panel-default">
     <div class="panel-body">
-      <table ng-init='configPages()'class='table' id="mytable">
-        <thead>
-          <tr>
-            <th>Asistencia</th>
-            <th>Numero de control</th>
-            <th>Asistencia</th>
-          </tr>
-        </thead>
+        <table ng-init='configPages()'class='table' id="mytable">
+            <thead>
+            <tr>
+                <th>Asistencia</th>
+                <th>Numero de control</th>
+                <th>Asistencia</th>
+            </tr>
+            </thead>
         <tbody>
-          <tr ng-repeat='dep in deportistasTec| startFromGrid: currentPage * pageSize | limitTo:pageSize', ng-click='seleccionarUsuario (dep.nombre)'>
+          <tr  ng-repeat='dep in deportistasTec| startFromGrid: currentPage * pageSize | limitTo:pageSize', ng-click='seleccionarUsuario (dep.nombre)'>
             <td>{{dep.numeroControl}}</td>
             <td>
               {{dep.nombre}}
@@ -59,9 +74,38 @@
                         type="checkbox"/>
                     <label for="{{dep.nombre}}" class="label-info"></label>
                 </div>
-               
             </td>
         </tbody>
     </div>
+</div>
+
+<div ng-if="opc===1" class="panel panel-default">
+    <div class="panel-body">
+      <table ng-init='configPages()'class='table' id="mytable">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Disciplinas</th>
+            <th>Asistencia</th>
+          </tr>
+        </thead>
+       <tbody>
+          <tr ng-repeat='ent in entrenadores| startFromGrid: currentPage * pageSize | limitTo:pageSize', ng-click='seleccionarUsuario (ent.nombre)'>
+            <td>{{ent.nombre}}<td>
+            <td>{{ent.disciplinas}}</td>
+            <td>
+                <div class="material-switch pull-right">
+                    <input id="{{ent.nombre}}" name="someSwitchOption001"  
+                         ng-click='activarDeportista(dep.curp)'
+                        type="checkbox"/>
+                    <label for="{{ent.nombre}}" class="label-info"></label>
+                </div>     
+            </td>
+        </tbody>
+    </div>
+</div>
+
+
+
 
 

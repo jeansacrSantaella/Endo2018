@@ -101,6 +101,14 @@ ng.config(['$routeProvider', '$locationProvider', function($routeProvider, $loca
       templateUrl: 'templates/Staff/staffsController.html', //ruta del archivo
       controller: 'staffsController', //nombre del controller
     })
+    .when('/auxiliares', {
+      templateUrl:'templates/Auxiliares/auxiliares.html',
+      controller:'auxiliaresController',
+    })
+    .when('/auxiliar/:id', {
+      templateUrl:'templates/Auxiliares/auxiliar.html',
+      controller:'auxiliarController',
+    })
     .otherwise({
       redirectTo: '/welcome'
     });

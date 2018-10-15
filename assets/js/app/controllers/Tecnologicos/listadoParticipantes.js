@@ -1,17 +1,14 @@
 ng.controller('listadoParticipantes', ['$scope', '$http','$timeout','$routeParams', 
   function($scope, $http, $timeout,$routeParams) {
-
-    /*
-      1.- ir por mis deportistas
-      2.- listarlos
-      3.- cuando le den click a uno, abrirlo
-      4.- opcion de inhabilitarlo
-    */
-  
-    
+      
    $scope.$on('$viewContentLoaded', () => {
     $scope.deportistasTec = [];
+    $scope.entrenadores = [];
+    $scope.nombreTec=$routeParams.tecProcedencia;
+    $scope.opc=1;
     $scope.refresh();
+    console.log($scope.opc);
+
   });
 
   $scope.refresh = function() {
@@ -27,7 +24,23 @@ ng.controller('listadoParticipantes', ['$scope', '$http','$timeout','$routeParam
         console.log('error al obtener deportistas:', error);
       }
     );
+    $http.post('/auxiliares/entrenadores-tec',{tecProcedencia:$routeParams.tecProcedencia}).then(
+      function success(response) {
+        console.log('Respuesta de obtener todos los deportista:', response);
+        if (response.data) {
+          $scope.entrenadores = response.data;
+        }
+      },
+      function error(error) {
+        alertify.error('Se produjo un error al obtener los deportistas.');
+        console.log('error al obtener deportistas:', error);
+      }
+    );
   };
+
+  $scope.opcion=function($opc){
+    $scope.opc=$opc;
+  }
 
   $scope.activarDeportista= function($curp){
     $http.post('/deportistas/activar',{

@@ -8,10 +8,6 @@
 module.exports = {
 
   attributes: {
-    foto:{
-      type:'string',
-      required:true
-    },
     nombre:{
       type:'string',
       required:true
@@ -23,6 +19,19 @@ module.exports = {
     tecOrigen:{
       type:'string',
       required:true
+    },
+    foto:{
+      type:'string',
+      required:false
+    },
+    tipo:{
+      type:'string',
+      required:true
+    },
+    activo:{
+      type:'boolean',
+      required:false,
+      defaultsTo:false
     }
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗

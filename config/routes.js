@@ -64,6 +64,12 @@ module.exports.routes = {
   '/deportistas/todos':{action: 'deportistas/todos'},
   '/deportistas/uno':{action: 'deportistas/uno'},
   
+  '/auxiliares/entrenadores-tec':{action: 'auxiliares/entrenadores-tec'},
+  '/auxiliares/guardar':{action: 'auxiliares/guardar'},
+  '/auxiliares/todos':{action: 'auxiliares/todos'},
+  '/auxiliares/uno':{action: 'auxiliares/uno'},
+  
+
   '/staff/guardar':{action:'staff/guardar'},
   '/staff/todos':{action:'staff/todos'},
   '/staff/uno':{action:'staff/uno'},
