@@ -1,0 +1,50 @@
+<div class="content">
+<center>
+  <h1>Asignación de Hoteles</h1>
+    <div class="panel panel-dafault">
+      <div class="panel-body">
+        <table ng-init='configPages()'class='table'id="mytable">
+      <thead>
+        <tr>
+          <th>HOTEL</th>
+          <th>CAP. HABITACIONES</th>
+            <th>DISPONIBILIDAD</th>
+          <th> ASIGNACION </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat='hotel in hotel| startFromGrid: currentPage *pageSize | limitTo:pageSize',ng-click='seleccionarUsuario(hotel.nombre'>
+          <th>Mision de Los Angeles</th>
+          <th>1 
+          <br>2
+          <br>3
+          <br>4
+        </th>
+         <th>3
+          <br> 2
+          <br> 5
+          <br> 4
+         </th>
+          <th><a href="#/hoteles/resultado"><input type="submit" name="asignar" value="ASIGNAR" onclick="otro()"></a></th>
+        </tr>
+        <tr>
+              <th>Mision de Los Angeles</th>
+          <th>1 
+          <br>2 
+          <br>3
+          <br>4
+              </th>
+        <th>3
+          <br> 2
+          <br> 5
+          <br> 4
+         </th>
+         <th><a href="#/hoteles/resultado"><input type="submit" name="asignar" value="ASIGNAR" onclick="otro()"></a></th>
+        </tr>
+
+      </tbody>
+    
+
+</div>
+</div>
+  </table> 

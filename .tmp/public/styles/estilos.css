@@ -344,3 +344,13 @@ font-family: "soberanaTitular";
     background: inherit;
     left: 20px;
 }
+.content {
+  max-width: 500px;
+  margin: auto;
+  /*background: white;*/
+  padding: 10px;
+} 
+
+#tabla1{
+width: 100%;
+}

@@ -1,0 +1,91 @@
+ <h2 id="titulovista" align="CENTER">Asignacion de Hotel</h1> 
+	<h3 id="nombreHotel">Hotel Mision de Los Angeles</h1>
+   <P> <label>Telefono:</label>  <label id="telefono" >951 258 47 14</label></P>
+   <P> <label>Correo:</label>  <label id="correo" >misiondelosangeles@gob.mx</label></P>
+  <P> <label>Contacto:</label>  <label id="contacto" >Manuel Santiago</label></P>
+
+ <hr size="100px">
+ <table id="tabla1">
+  <tr id="tabla1">
+    <th>Capacidad</th>
+    <th>Sencilla</th>
+    <th>Doble</th>
+    <th>Triple</th>
+    <th>Cuadrupla</th>
+  </tr>
+  <tr>
+    <td>Disponibilidad</td>
+    <td><span id="Sencilla" class="badge">12</span></td>
+    <td><span id="Doble" class="badge">20</span></td>
+    <td><span id="Triple" class="badge">11</span></td>
+    <td><span id="Cuadrupla" class="badge">10</span></td>
+  </tr>
+</table>
+<hr>
+  <table  class="table">
+    <tr>
+      <th>Tecnologico</th>
+      <th>Personal</th>
+      <th>Habitaciones</th>
+    </tr>
+    <tr>
+      <td>I.T. Queretaro</td>
+      <td>Mujer 120 <br> Hombre 150
+      </td>
+      <td>
+          <select name="menu" id="menu">
+              <option value="0" selected disabled>Seleccione Capacidad</option>
+              <option value="1">Sencilla</option>
+              <option value="2">Doble</option>
+              <option value="3">Triple</option>
+              <option value="4">otro</option>
+          </select>
+          <input type="text" id="disponible" size="4">
+          <button onclick="descontar()"><span class="glyphicon glyphicon-ok"></span></button>
+      </td>
+      <td><input type="radio" id="r1" name="seleccionar"></td>
+    </tr>
+  
+    
+  </table>
+<center>
+   <a href="#/hoteles/asignacion" class="btn btn-info">Regresar</a>
+  <a  class="btn btn-primary" onclick="registrado()">Registrar</a>
+</center>
+ 
+
+  <script>
+    function registrado() {
+      alert("Quedo registrado correctamente!!!");
+    }
+  </script>
+
+  <!---div class="panel panel-default">
+    <div class="panel-body">
+      <table ng-init='configPages()'class='table' id="mytable">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Encargado</th>
+            <th>Telefono</th>
+            <th>correo</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat='hot in hoteles| startFromGrid: currentPage * pageSize | limitTo:pageSize', ng-click='seleccionarUsuario (dep.nombre)'>
+            <td>{{hot.nombre}} </td>
+            <td>{{hot.nombreEncargado}}</td>
+            <td>{{aux.telefono}}</td>
+            <td>{{aux.correo}}</td>
+            <td> 
+                <!--button type="button" class="btn btn-info btn-sm" ng-click="imprimir(a)">
+                <i class="fas fa-print" aria-hidden></i>
+                </button>
+                <button type="button" class="btn btn-warning btn-sm" ng-click="borrar(a)">
+                <i class="fas fa-trash-alt" aria-hidden></i>
+                </button>
+                <a ng-href="#/hoteles/{{hot.id}}" class="btn btn-info btn-sm">
+                <i class="fas fa-pencil-alt" aria-hidden></i></a></td>
+        </tbody>
+    </div>

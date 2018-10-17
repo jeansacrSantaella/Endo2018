@@ -1,5 +1,5 @@
 /**
- * Deportista.js
+ * Hotel.js
  *
  * @description :: A model definition.  Represents a database table/collection/etc.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -8,65 +8,22 @@
 module.exports = {
 
   attributes: {
-    numeroControl:{
-      type:'string',
-      required:true
-    },
-    foto:{
-      type:'boolean',
-      defaultsTo:false
-    },
     nombre:{
       type:'string',
       required:true
-    },
-    curp:{
+      },
+    nombreEncargado:{
       type:'string',
       required:true
-    },
-    padecimientos:{
-      type:'string',
-      required:false
-    },
-    alergias:{
-      type:'string',
-      required:false
-    },
-   tipodeSangre:{
-    type:'string',
-    required:true
-   },
-    nss:{
+      },
+    telefono:{
       type:'string',
       required:true
-   },
-    numeroEmergencia:{
-      type:'string',
-      required:false
-    },
-    tecProcedencia:{
+      },
+    correo:{
       type:'string',
       required:true
-    },
-    genero:{
-      type:'string',
-      required:true
-    },
-    disciplina:{
-      type:'string',
-      required:true
-    },
-
-    direccionFoto:{
-      type:'json',
-      required:false
-    },
-    activo:{
-      type:'boolean',
-      required:false,
-    },
-
-
+      },
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
@@ -81,7 +38,9 @@ module.exports = {
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-
+    habitacion:{
+      model:'habitacion'
+    }
   },
 
 };

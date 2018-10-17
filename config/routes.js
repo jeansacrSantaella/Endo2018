@@ -66,9 +66,14 @@ module.exports.routes = {
   
   '/auxiliares/entrenadores-tec':{action: 'auxiliares/entrenadores-tec'},
   '/auxiliares/otros-tec':{action: 'auxiliares/otros-tec'},
+  '/auxiliares/activar':{action: 'auxiliares/activar'},
   '/auxiliares/guardar':{action: 'auxiliares/guardar'},
   '/auxiliares/todos':{action: 'auxiliares/todos'},
   '/auxiliares/uno':{action: 'auxiliares/uno'},
+
+
+  '/hoteles/guardar':{action:'hoteles/guardar'},
+  '/hoteles/todos':{action:'hoteles/todos'},
   
 
   '/staff/guardar':{action:'staff/guardar'},
