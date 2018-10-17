@@ -80,15 +80,14 @@
         <thead>
           <tr>
             <th>Nombre</th>
-            <th>Disciplinas</th>
+            <th>Disciplina(s)</th>
             <th>Asistencia</th>
           </tr>
         </thead>
        <tbody>
           <tr ng-repeat='ent in respuesta| startFromGrid: currentPage * pageSize | limitTo:pageSize', ng-click='seleccionarUsuario (ent.nombre)'>
-            <td>{{ent.nombre}}<td>
-            <td>{{ent.disciplinas}}</td>
-            <td>
+            <td>{{ent.nombre}}</td>
+            <td>{{ent.disciplinas}}
                 <div class="material-switch pull-right">
                     <input id="{{ent.nombre}}" name="someSwitchOption001"  
                          ng-click='activarAuxiliar(ent.id)'
@@ -108,12 +107,11 @@
         </thead>
        <tbody>
           <tr ng-repeat='otr in respuesta| startFromGrid: currentPage * pageSize | limitTo:pageSize', ng-click='seleccionarUsuario (otr.nombre)'>
-            <td>{{otr.nombre}}<td>
-            <td>{{otr.tipo}}</td>
-            <td>
+            <td>{{otr.nombre}}</td>
+            <td>{{otr.tipo}}
                 <div class="material-switch pull-right">
                     <input id="{{otr.nombre}}" name="someSwitchOption001"  
-                         ng-click='activarAuxiliar(ent.id)'
+                         ng-click='activarAuxiliar(otr.id)'
                         type="checkbox"/>
                     <label for="{{otr.nombre}}" class="label-info"></label>
                 </div>     

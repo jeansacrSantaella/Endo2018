@@ -17,15 +17,14 @@
         <thead>
           <tr>
             <th>NOMBRE</th>
-            <th>Disciplina(s)</th>
+            <th>Tipo</th>
             <th>Tec. de Procedencia</th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
           <tr ng-repeat='aux in auxiliares| startFromGrid: currentPage * pageSize | limitTo:pageSize', ng-click='seleccionarUsuario (dep.nombre)'>
             <td>{{aux.nombre}} </td>
-            <td>{{aux.disciplinas}}</td>
+            <td>{{aux.tipo}}</td>
             <td>{{aux.tecOrigen}}</td>
             <td> 
                 <button type="button" class="btn btn-info btn-sm" ng-click="imprimir(a)">
@@ -35,6 +34,7 @@
                 <i class="fas fa-trash-alt" aria-hidden></i>
                 </button>
                 <a ng-href="#/auxiliar/{{aux.id}}" class="btn btn-info btn-sm">
-                <i class="fas fa-pencil-alt" aria-hidden></i></a></td>
+                <i class="fas fa-pencil-alt" aria-hidden></i></a>
+            </td>
         </tbody>
     </div>

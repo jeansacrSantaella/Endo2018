@@ -76,7 +76,7 @@ ng.controller('listadoParticipantes', ['$scope', '$http','$timeout','$routeParam
     );$scope.refresh();
   };
 
-  /*$scope.activarAuxiliar= function($id){
+  $scope.activarAuxiliar= function($id){
     $http.post('/auxiliares/activar',{
         id:$id
     }).then(
@@ -88,7 +88,7 @@ ng.controller('listadoParticipantes', ['$scope', '$http','$timeout','$routeParam
         console.log('Error al activar:', err);
       }
     );$scope.refresh();
-  };*/
+  };
 
 
 

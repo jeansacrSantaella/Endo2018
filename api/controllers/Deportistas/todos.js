@@ -15,7 +15,7 @@ module.exports = {
 
     },
     fn: async function (inputs,exits){
-        return exits.success(await Deportistas.find());
+        return exits.success(await Deportistas.find({activo:true}));
     }
 
 };

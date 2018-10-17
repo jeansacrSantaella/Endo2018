@@ -18,7 +18,7 @@ module.exports = {
 
     },
     fn: async function (inputs,exits){
-        return exits.success(await Auxiliares.find({tecOrigen:inputs.tecProcedencia} && {activo:false} && {tipo:'Chofer'|| 'Médico' ||'Promotor' }));
+        return exits.success(await Auxiliares.find({tecOrigen:inputs.tecProcedencia,activo:false,tipo:['Médico','Chofer','Promotor']}));
     }
 
 };
