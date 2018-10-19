@@ -12,9 +12,13 @@ module.exports = {
       type:'string',
       required:true
     },
-    nombreCorto:{
+    hotel:{
       type:'string',
       required:true
+    },
+    cantidadHabitaciones:{
+      type:'number',
+      defaultsTo:0
     }
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗

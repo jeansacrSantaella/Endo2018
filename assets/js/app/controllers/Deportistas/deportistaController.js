@@ -68,6 +68,10 @@ function($scope, $http, $timeout,$routeParams,$location,Upload) {
           deportistacurp: $scope.deportista.curp
         }
       };
+
+  
+
+
       Upload.upload(carga).then((resp) => {
         console.log('deportistaController->subirFoto->response: ', resp);
         $scope.subiendoFoto = false;

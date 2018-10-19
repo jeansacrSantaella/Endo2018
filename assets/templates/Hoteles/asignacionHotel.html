@@ -1,50 +1,42 @@
-<div class="content">
-<center>
+<script>
+    // evento para recibir lo que se busca search
+    $(document).ready(function(){
+    $("#search").keyup(function(){
+    _this = this;
+    // muestrar solo los que coincidan con las busqueda
+    //id de la tabla es mytable 
+    $.each($("#mytable tbody tr"), function() {
+    if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+    $(this).hide();
+    else
+    $(this).show();
+    });
+    });
+   });
+   </script>
   <h1>Asignación de Hoteles</h1>
+  <br>
+   <a href="#/hotel/nuevo" class="btn btn-primary btn-sm pull-right">
+      <i class="fas fa-plus" aria-hidden></i> Nuevo Hotel
+    </a>
+  <hr>
     <div class="panel panel-dafault">
       <div class="panel-body">
         <table ng-init='configPages()'class='table'id="mytable">
       <thead>
         <tr>
-          <th>HOTEL</th>
-          <th>CAP. HABITACIONES</th>
-            <th>DISPONIBILIDAD</th>
-          <th> ASIGNACION </th>
+          <th>Nombre</th>
+          <th>Asignar</th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat='hotel in hotel| startFromGrid: currentPage *pageSize | limitTo:pageSize',ng-click='seleccionarUsuario(hotel.nombre'>
-          <th>Mision de Los Angeles</th>
-          <th>1 
-          <br>2
-          <br>3
-          <br>4
-        </th>
-         <th>3
-          <br> 2
-          <br> 5
-          <br> 4
-         </th>
-          <th><a href="#/hoteles/resultado"><input type="submit" name="asignar" value="ASIGNAR" onclick="otro()"></a></th>
-        </tr>
-        <tr>
-              <th>Mision de Los Angeles</th>
-          <th>1 
-          <br>2 
-          <br>3
-          <br>4
-              </th>
-        <th>3
-          <br> 2
-          <br> 5
-          <br> 4
-         </th>
-         <th><a href="#/hoteles/resultado"><input type="submit" name="asignar" value="ASIGNAR" onclick="otro()"></a></th>
-        </tr>
-
+          <tr ng-repeat='hot in hoteles| startFromGrid: currentPage * pageSize | limitTo:pageSize', ng-click='seleccionarUsuario (dep.nombre)'>
+          <td>{{hot.nombre}}</td>
+          <td>
+            <a ng-href="#/hotel/{{hot.id}}" class="btn btn-info btn-sm">
+            <i class="fas fa-pencil-alt" aria-hidden></i></a>
+          </td>
       </tbody>
-    
-
 </div>
 </div>
   </table> 

@@ -12,18 +12,6 @@ module.exports = {
       type:'string',
       required:true
       },
-    nombreEncargado:{
-      type:'string',
-      required:true
-      },
-    telefono:{
-      type:'string',
-      required:true
-      },
-    correo:{
-      type:'string',
-      required:true
-      },
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
@@ -38,9 +26,7 @@ module.exports = {
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-    habitacion:{
-      model:'habitacion'
-    }
+  
   },
 
 };

@@ -1,3 +1,12 @@
+<script>
+    $( function() {
+      var availableTags = ["Instituto Tecnológico Superior de Calkiní"
+      ];
+      $( "#tags" ).autocomplete({
+        source: availableTags
+      });
+    } );
+    </script>
 <h1>
     <span ng-show="!deportista.curp">
       Nuevo Alumno
@@ -78,11 +87,11 @@
   
   <div class="col-xs-3">	
       <input type="text" 
-        class="form-control" 
+        class="form-control"
         name="Tecnológico de Procedencia"
         placeholder="Tecnológico de Procedencia"
         title="Sólo se permiten letras"
-        autocomplete="on"
+        id="tags"
         ng-model="deportista.tecProcedencia"/>
   </div>
   <div class="col-xs-3">
@@ -132,12 +141,16 @@
             ng-model="deportista.alergias"/>
     </div>
     <div class="col-xs-2">
-        <input type="text" 
-            class="form-control" 
-            name="tipoSangre"
-            placeholder="tipoSangre"
-             title="tipo de Sangre"
-            ng-model="deportista.tipodeSangre"/>
+        <select name="Disciplina" class="form-control" ng-model="deportista.tipodeSangre">
+            <option value="O-" selected>O-</option> 
+            <option value="O+">O+</option> 
+            <option value="A-">A-</option>
+            <option value="A+">A+</option>
+            <option value="B-">B-</option> 
+            <option value="B+">B+</option> 
+            <option value="AB-">AB-</option> 
+            <option value="AB+">AB+</option> 
+         </select>
     </div>
     <div class="col-xs-3">
         <input type="text" 

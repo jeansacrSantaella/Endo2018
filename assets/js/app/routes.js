@@ -109,13 +109,13 @@ ng.config(['$routeProvider', '$locationProvider', function($routeProvider, $loca
       templateUrl:'templates/Auxiliares/auxiliar.html',
       controller:'auxiliarController',
     })
-    .when('/hoteles', {
+    .when('/hotel/:id', {
       templateUrl:'templates/Hoteles/registroHotel.html',
       controller:'registrarHotelController',
     })
-    .when('/hoteles/asignacion', {
+    .when('/hoteles', {
       templateUrl:'templates/Hoteles/asignacionHotel.html',
-      controller:'',
+      controller:'todosHotelesController',
     })
     .when('/hoteles/resultado', {
       templateUrl:'templates/Hoteles/hotelResultado.html',
