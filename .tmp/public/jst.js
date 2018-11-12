@@ -80,6 +80,16 @@ __p += '<div class="footer pull-right small">\n  <p>\n    <span ng-show="main.Us
 return __p
 };
 
+this["JST"]["assets/templates/gafetesController.html"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '<script>\n    // evento para recibir lo que se busca search\n    $(document).ready(function(){\n    $("#search").keyup(function(){\n    _this = this;\n    // muestrar solo los que coincidan con las busqueda\n    //id de la tabla es mytable\n    $.each($("#mytable tbody tr"), function() {\n    if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)\n    $(this).hide();\n    else\n    $(this).show();\n    });\n    });\n   });\n   </script>\n\n<h1>\n    Participantes\n    <!--a href="#/deportista/nuevo" class="btn btn-primary btn-sm pull-right">\n      <i class="fas fa-plus" aria-hidden></i> Imprimir gafete\n    </a-->\n</h1>\n<br>\n<div class="form-group">\n  <left><label>Buscar Participante</label></left> <br>\n      <center><input type="text" class="form-control pull-left" style="width:20%" id="search" placeholder="Nombre Participante...."></center>\n</div>\n<br>\n     <hr>\n  <div class="panel panel-default">\n    <div class="panel-body">\n      <table ng-init=\'configPages()\'class=\'table\' id="mytable">\n        <thead>\n          <tr>\n            <th>NOMBRE</th>\n            <th>TEC. PROCEDENCIA</th>\n            <th>DISCIPLINA</th>\n            <th>TIPO PARTICIPANTE</th>\n            <th></th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr ng-repeat=\'dep in deportistas| startFromGrid: currentPage * pageSize | limitTo:pageSize\', ng-click=\'seleccionarUsuario (dep.nombre)\'>\n            <td>{{dep.nombre}} </td>\n            <td>{{dep.tecProcedencia}}</td>\n            <td>{{dep.disciplina}}</td>\n            <td>{{DEPORTISTA}}</td>\n\n          </tr>\n        </tbody>\n        </table>\n      </div>\n\n        <button type="button" class="btn btn-info btn-sm" ng-click="imprimir(a)">\n        <i class="fas fa-print" aria-hidden></i>\n        </button>\n    </div>\n';
+
+}
+return __p
+};
+
 this["JST"]["assets/templates/header.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;

@@ -121,6 +121,10 @@ ng.config(['$routeProvider', '$locationProvider', function($routeProvider, $loca
       templateUrl:'templates/Hoteles/hotelResultado.html',
       controller:'',
     })
+    .when('/gafetes', {
+      templateUrl:'templates/gafetesController.html',
+      controller:'gafetesController',
+    })
     .otherwise({
       redirectTo: '/welcome'
     });
