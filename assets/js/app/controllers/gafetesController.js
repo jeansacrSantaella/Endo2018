@@ -40,7 +40,7 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
       var canvas = document.getElementById("fondo");
       var datau1 = canvas.getContext("2d");
       var img = new Image();
-      img.src="/images/fondo_gft_complet.jpg";
+      img.src="/images/fondo_compl_final.jpg";
       img.onload = function(){datau1.drawImage(img, 0, 0);};
       return canvas.toDataURL();
     };
