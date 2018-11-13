@@ -17,14 +17,14 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
     $scope.refresh = function() {
       $http.get('/deportistas/todos').then(
         function success(response) {
-          console.log('Respuesta de obtener todos los participanes:', response);
+          console.log('Respuesta de obtener todos los deportistas:', response);
           if (response.data) {
             $scope.deportistas = response.data;
           }
         },
         function error(error) {
-          alertify.error('Se produjo un error al obtener los participantes.');
-          console.log('error al obtener participantes:', error);
+          alertify.error('Se produjo un error al obtener los deportistas.');
+          console.log('error al obtener deportistas:', error);
         }
       );
     };
@@ -47,7 +47,7 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
 
     function cargaFoto(curp) {
       var nombre_foto = '/images/DeportistasFotos/' + curp + '.jpg';
-      console.log()nombre_foto;
+      console.log(nombre_foto);
       var canvas = document.getElementById("foto");
       var datau1 = canvas.getContext("2d");
       var img = new Image();

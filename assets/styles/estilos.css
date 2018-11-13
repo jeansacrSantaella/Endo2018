@@ -1,6 +1,6 @@
 /*
  * ─── FUENTES INICIAN ────────────────────────────────────────────────────────────
- 
+
 @font-face
   {
   font-family: "FontAwesome";
@@ -77,7 +77,7 @@ body{
    background-image:-webkit-linear-gradient(top,#000000 ,#ffff 100%)
 
  }
-  
+
 /*
  * ─── Inicia DISCIPLINAS ────────────────────────────────────────────────────────────────
  */
@@ -90,7 +90,7 @@ body{
  * ─── TERMINA DISCIPLINAS ────────────────────────────────────────────────────────
  */
 
-    
+
 /*
  * ─── MENU ───────────────────────────────────────────────────────────────────────
  */
@@ -102,13 +102,16 @@ body{
  }
  .navbar-inverse{
   background-image: linear-gradient(to bottom,#0000 0,#000 100%);
-  font-weight: normal; 
+  font-weight: normal;
   color: #fbfbfb;
  }
  .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
    text-shadow: #fbfbfb;
    color: #fbfbfb;
  }
+ oculto{
+  display: none;
+}
 /*
  * ─── FUENTES INICIAN ────────────────────────────────────────────────────────────────────
  */
@@ -290,25 +293,25 @@ font-family: "soberanaTitular";
     border: 1px solid #444;
     box-shadow: 0 0 5px #444;
   }
-  
+
   .perfil-thumb img{
     max-width: 80px;
     max-height: 110px;
   }
 
-  
 
 
-  
+
+
   .material-switch > input[type="checkbox"] {
-    display: none;   
+    display: none;
 }
 
 .material-switch > label {
     cursor: pointer;
     height: 0px;
-    position: relative; 
-    width: 40px;  
+    position: relative;
+    width: 40px;
 }
 
 .material-switch > label::before {
@@ -349,7 +352,7 @@ font-family: "soberanaTitular";
   margin: auto;
   /*background: white;*/
   padding: 10px;
-} 
+}
 
 #tabla1{
 width: 100%;
