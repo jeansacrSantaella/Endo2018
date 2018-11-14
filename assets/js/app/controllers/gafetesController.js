@@ -12,6 +12,7 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
       $scope.deportistas = [];
       $scope.refresh();
       cargaFondo();
+      var seleccionado = {};
     });
 
     $scope.refresh = function() {
@@ -28,6 +29,7 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
         }
       );
     };
+
     /*
      ██████   █████  ███████ ███████ ████████ ███████
     ██       ██   ██ ██      ██         ██    ██
@@ -37,22 +39,22 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
     */
 
     function cargaFondo() {
-      var canvas = document.getElementById("fondo");
-      var datau1 = canvas.getContext("2d");
+      var canvas = document.getElementById("fondo_c");
+      var datau1 = canvas.getContext('2d');
       var img = new Image();
       img.src="/images/fondo_compl_final.jpg";
-      img.onload = function(){datau1.drawImage(img, 0, 0);};
+      img.onload = function(){ datau1.drawImage(img, 0, 0); };
       return canvas.toDataURL();
     };
 
     function cargaFoto(curp) {
       var nombre_foto = '/images/DeportistasFotos/' + curp + '.jpg';
       console.log(nombre_foto);
-      var canvas = document.getElementById("foto");
-      var datau1 = canvas.getContext("2d");
+      var canvas = document.getElementById("foto_c");
+      var datau2 = canvas.getContext('2d');
       var img = new Image();
       img.src=nombre_foto;
-      img.onload = function(){datau1.drawImage(img, 0, 0);};
+      img.onload = function(){ datau2.drawImage(img, 0, 0); };
       return canvas.toDataURL();
     };
 
@@ -66,8 +68,8 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
     $scope.imprimir = function(deportista) {
     console.log('imprimiendo...', deportista);
 
-    dataw= cargaFoto(deportista.curp);
     datav = cargaFondo();
+    dataw= cargaFoto(deportista.curp);
 
     new QRCode('elqrcode', {
       text: deportista.curp,
@@ -86,16 +88,16 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
       background: {
         style: 'margen1',
         image: datav,
-        width: 510,
-        /*height: 340,*/
+        width: 454,
+        height: 340,
       },
       content: [
         {/*********VISTA_FRONTAL***********/
           style: 'margen2',
           table: {
-            widths: ['*', '*'],
+            widths: [216, 216],
             body: [/*****TABLA PRINC****/
-					        [{text:'\n\n\n\n\n\n', border: [true,false,true,false]}, {text: '',  border: [false,false,true,false]}],/*****ESPACIO HEADER*****/
+					        [{text:'\n\n\n\n', border: [true,true,true,false]}, {text: '',  border: [false,true,true,false]}],/*****ESPACIO HEADER*****/
 					        [{
                     table:{
                       widths:['auto', '*'],
@@ -106,11 +108,11 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
                         table: {
                           widths: ['*'],
                           body: [
-                            [{text: deportista.tecProcedencia , fontSize: 18, color: '#7a2605',border: [false,false,false,false]}],
+                            [{text: deportista.tecProcedencia , fontSize: 12, color: '#7a2605',border: [false,false,false,false]}],
                             [{text: '\n',border: [false,false,false,false]}],
-                            [{text: deportista.nombre , fontSize: 18, border: [false,false,false,false]}],
+                            [{text: deportista.nombre , fontSize: 12, border: [false,false,false,false]}],
                             [{text: '\n',border: [false,false,false,false]}],
-                            [{text: deportista.disciplina, fontSize: 12, border: [false,false,false,false]}],
+                            [{text: deportista.disciplina, fontSize: 10, border: [false,false,false,false]}],
                           ]
                         }, border: [false,false,false,false]}/*****FIN TEC, NOMBRE, DISCIPLINA*****/
                       ]/**FIN FILA FOTO**/
@@ -120,9 +122,9 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
                     {/*****QR code*****/
 		    				    image: datau,
 		    				    rowSpan:3,
-		    				    margin:[110,15,0,0],
-		    				    width:110,
-		    				    height:110,
+		    				    margin:[90,15,0,0],
+		    				    width:100,
+		    				    height:100,
 		    				    border: [false,false,true,false]
 		    				    }
   				        ],//espacio entre foto y datos
@@ -131,20 +133,19 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
                     table: {
                       widths: ['auto','*'],
 									    body: [
-										    [{text: 'No. Control:', border: [false,false,false,false]},    {text: deportista.numeroControl, border: [false,false,false,false]},],
-										    [{text: 'NSS:', border: [false,false,false,false]},            {text: deportista.nss, border: [false,false,false,false]},],
-										    [{text: 'T. Sanguineo:', border: [false,false,false,false]},   {text: deportista.tipoSangre, border: [false,false,false,false]},],
+										    [{text: 'No. Ctrl:', border: [false,false,false,false]},    {text: deportista.numeroControl, border: [false,false,false,false]},],
+                        [{text: 'Tipo de Sangre:', border: [false,false,false,false]},   {text: deportista.tipoSangre, border: [false,false,false,false]},],
+                        [{text: 'N.S.S:', border: [false,false,false,false]},            {text: deportista.nss, border: [false,false,false,false]},],
 										    [{text: 'Alergias:', border: [false,false,false,false]},       {text: deportista.alergias, border: [false,false,false,false]},],
 										    [{text: 'Padecimientos:', border: [false,false,false,false]},  {text: deportista.padecimientos, border: [false,false,false,false]},],
-										    [{text: 'Tel. Emergencia:', border: [false,false,false,false]},{text: deportista.numeroEmergencia, border: [false,false,false,false]},]
+
 	    								]
 		    						}, border: [true,false,true,false]},/******FIN DATOS MEDICOS*****/
                     {text:'', border: [false,false,true,false]}
 	    				    ],
 	    				    [{text:'\n',border: [true,false,true,false]},{text:'',border: [false,false,false,false]}],
 	    				    //[{text:'\n',border: [true,false,true,false]},{text:'',border: [false,false,true,false]}],
-	    				    [{text:'\n',border: [true,false,true,false]},{text:'',border: [false,false,true,false]}],
-	    				    [{text: 'DEPORTISTA', style: 'pie'},{text:'',border: [false,false,true,false]}]
+	    				    [{text: 'DEPORTISTA', style: 'pie', border: [true,false,true,true]},{text:'',border: [false,false,true,true]}]
             ],//fin tabla princ
 	        }
 				}
@@ -157,16 +158,16 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
            margin: [0, 0, 0, 0]
          },
          datosMedicos: {
-           fontSize: 10,
+           fontSize: 8,
            alignment: 'left',
            color: '#000000',
            border: [false,false,false,false]
          },
          pie: {
            alignment: 'center',
-           fontSize: 18,
+           fontSize: 16,
            bold: true,
-           fillColor: '#0f34d7',
+           //fillColor: '#0f34d7',
            color:'#ffffff',
            border: [false,false,true,false]
          },
@@ -178,4 +179,21 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
      };/*fin var dd*/
     pdfMake.createPdf(dd).open();
   };/*fin imprimir(deportista)*/
+
+/*
+██    ██  █████  ██████  ██  ██████  ███████
+██    ██ ██   ██ ██   ██ ██ ██    ██ ██
+██    ██ ███████ ██████  ██ ██    ██ ███████
+ ██  ██  ██   ██ ██   ██ ██ ██    ██      ██
+  ████   ██   ██ ██   ██ ██  ██████  ███████
+*/
+$scope.imprimir_varios = function() {console.log("entrando pdf...")
+  return $.map($scope.seleccionado, function (value, index) {
+    if(value){
+      console.log("iniciando...");
+      imprimir(index);console.log("continuando...");
+    } } );console.log("cerrando...");
+  //for(var i = 0; i < seleccionado.length; i++){
+    //imprimir(seleccionado[i]);
+  }
 }]);
