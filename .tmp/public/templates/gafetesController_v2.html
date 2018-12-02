@@ -1,0 +1,82 @@
+<script>
+    // evento para recibir lo que se busca search
+    $(document).ready(function(){
+    $("#search").keyup(function(){
+    _this = this;
+    // muestrar solo los que coincidan con las busqueda
+    //id de la tabla es mytable
+    $.each($("#mytable tbody tr"), function() {
+    if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+      $(this).hide();
+    else
+      $(this).show();
+    });
+    });
+   });
+
+   function todos(chkbox) {
+    for (var i=0;i < document.forms[0].elements.length;i++){
+      var elemento = document.forms[0].elements[i];
+      if (elemento.type == "checkbox"){
+        elemento.checked = chkbox.checked
+      }
+    }
+  }
+   </script>
+
+<div id="elqrcode" class="oculto" class='oculto' style="display:none "></div>
+<canvas id="fondo_c" width=1910 height=1400 class='oculto' style="display:none "></canvas>
+
+
+<h1>
+    Participantes
+    <!--a href="#/deportista/nuevo" class="btn btn-primary btn-sm pull-right">
+      <i class="fas fa-plus" aria-hidden></i> Imprimir gafete
+    </a-->
+</h1>
+<br>
+
+<div class="form-group">
+  <left><label>Buscar Participante</label></left> <br>
+      <center><input type="text" class="form-control pull-left" style="width:20%" id="search" placeholder="Nombre Participante...."></center>
+</div>
+<br>
+<form name="formulario" method="" action="">
+     <hr>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <table ng-init='configPages()'class='table' id="mytable" >
+        <!--thead>
+          <tr>
+            <th>NOMBRE</th>
+            <th>TEC. PROCEDENCIA</th>
+            <th>DISCIPLINA</th>
+            <th>TIPO PARTICIPANTE</th>
+            <th><input type="checkbox" id="chbx" onClick="todos(this);">Todos</th>
+            <th></th>
+          </tr>
+        </thead-->
+        <tbody background="/images/fondo_compl_final.jpg">
+          <tr ng-repeat='dep in deportistas| startFromGrid: currentPage * pageSize | limitTo:pageSize', ng-click='seleccionarUsuario (dep.nombre)' ng_onload='cargaFoto(dep.curp)'>
+            <td>{{dep.nombre}} </td>
+            <td>{{dep.tecProcedencia}}</td>
+            <td>{{dep.disciplina}}</td>
+            <td>Deportista</td>
+            <td><input type="checkbox" id="chbx" ng-model="$scope.seleccionado[dep]"></td>
+            <td><canvas id="{{dep.curp}}" width='190' height='240' class='oculto' style=" display:true; border:3px solid #ccc;" ></canvas></td>
+            <!--td><img src="" ng_onload="cargaFoto( {{dep.curp}} )" style=" display:none "></td-->
+
+            <td><button type="button" class="btn btn-info btn-sm pull-right" ng-click="imprimir(dep)">
+              <i class="fas fa-print" aria-hidden></i>
+              </button></td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+
+      <button type="button" class="btn btn-info btn-sm pull-right" ng-click="imprimir_varios()">
+      <i class="fas fa-print" aria-hidden></i>
+      </button>
+
+    </div>
+    </form>

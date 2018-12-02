@@ -48,9 +48,9 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
     };
 
     function cargaFoto(curp) {
-      var nombre_foto = '/images/DeportistasFotos/' + curp + '.jpg';
+      var nombre_foto = '/images/DeportistasFotos/'+curp+'.jpg';
       console.log(nombre_foto);
-      var canvas = document.getElementById("foto_c");
+      var canvas = document.getElementById(curp);
       var datau2 = canvas.getContext('2d');
       var img = new Image();
       img.src=nombre_foto;
@@ -66,11 +66,20 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
     ██ ██      ██ ██      ██   ██ ██ ██      ██ ██ ██   ██
     */
     $scope.imprimir = function(deportista) {
-    console.log('imprimiendo...', deportista);
+    console.log('imprimiendo...', deportista.nombre);
 
-    datav = cargaFondo();
-    dataw= cargaFoto(deportista.curp);
+    var datav = cargaFondo();
+    //var dataw = /*document.getElementById(deportista.curp);*/cargaFoto(deportista.curp);
+    //var dataw = dataw1.toDataURL();
+    //funcion para foto de particioante***************************
+    var canvasFD = document.getElementById(deportista.curp);
+    var datoFD = canvasFD.getContext('2d');
+    var fd = new Image();
+    fd.src='/images/DeportistasFotos/'+deportista.curp+'.jpg';
+    fd.onload = function(){ datoFD.drawImage(fd, 0, 0); };
 
+    dataw = canvasFD.toDataURL();
+    //fin funcion foto de participante**********************************
     new QRCode('elqrcode', {
       text: deportista.curp,
       width: 90,
@@ -100,18 +109,18 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
 					        [{text:'\n\n\n\n', border: [true,true,true,false]}, {text: '',  border: [false,true,true,false]}],/*****ESPACIO HEADER*****/
 					        [{
                     table:{
-                      widths:['auto', '*'],
+                      widths:['*', '*'],
                       body: [
-                      [{image: dataw, width: 75, border: [false,false,false,false]},//<- foto vato
+                      [{image: dataw, width: 100, height: 120, border: [false,false,false,false]},//<- foto vato
                       {/*****TEC, NOMBRE, DISCIPLINA*****/
                         style: 'datosfoto',
                         table: {
                           widths: ['*'],
                           body: [
-                            [{text: deportista.tecProcedencia , fontSize: 12, color: '#7a2605',border: [false,false,false,false]}],
-                            [{text: '\n',border: [false,false,false,false]}],
+                            [{text: deportista.tecProcedencia , fontSize: 14, color: '#7a2605',border: [false,false,false,false]}],
+                            [{text: '\n', fontSize: 6, border: [false,false,false,false]}],
                             [{text: deportista.nombre , fontSize: 12, border: [false,false,false,false]}],
-                            [{text: '\n',border: [false,false,false,false]}],
+                            [{text: '\n', fontSize: 6, border: [false,false,false,false]}],
                             [{text: deportista.disciplina, fontSize: 10, border: [false,false,false,false]}],
                           ]
                         }, border: [false,false,false,false]}/*****FIN TEC, NOMBRE, DISCIPLINA*****/
@@ -122,9 +131,9 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
                     {/*****QR code*****/
 		    				    image: datau,
 		    				    rowSpan:3,
-		    				    margin:[90,15,0,0],
-		    				    width:100,
-		    				    height:100,
+		    				    margin:[90,0,0,0],
+		    				    width:88,
+		    				    height:88,
 		    				    border: [false,false,true,false]
 		    				    }
   				        ],//espacio entre foto y datos
@@ -177,7 +186,7 @@ ng.controller('gafetesController', ['$scope', '$http','$timeout','$routeParams',
          }
        }
      };/*fin var dd*/
-    pdfMake.createPdf(dd).open();
+    pdfMake.ccreatePdf(dd).open();
   };/*fin imprimir(deportista)*/
 
 /*
@@ -192,7 +201,7 @@ $scope.imprimir_varios = function() {console.log("entrando pdf...")
     if(value){
       console.log("iniciando...");
       imprimir(index);console.log("continuando...");
-    } } );console.log("cerrando...");
+    } } );
   //for(var i = 0; i < seleccionado.length; i++){
     //imprimir(seleccionado[i]);
   }

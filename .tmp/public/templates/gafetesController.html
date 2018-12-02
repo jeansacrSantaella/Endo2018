@@ -24,9 +24,9 @@
   }
    </script>
 
-<div id="elqrcode" class="oculto"></div>
-<canvas id="fondo_c" width=1900 height=1400 ></canvas>
-<canvas id="foto_c" width=500 height=500></canvas>
+<div id="elqrcode" class="oculto" class='oculto' style="display:none "></div>
+<canvas id="fondo_c" width=1910 height=1400 class='oculto' style="display:none "></canvas>
+
 
 <h1>
     Participantes
@@ -52,21 +52,23 @@
             <th>TEC. PROCEDENCIA</th>
             <th>DISCIPLINA</th>
             <th>TIPO PARTICIPANTE</th>
-            <th><input type="checkbox" id="chbx" onClick="todos(this);"></th>
+            <th><input type="checkbox" id="chbx" onClick="todos(this);">Todos</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat='dep in deportistas| startFromGrid: currentPage * pageSize | limitTo:pageSize', ng-click='seleccionarUsuario (dep.nombre)'>
+          <tr ng-repeat='dep in deportistas| startFromGrid: currentPage * pageSize | limitTo:pageSize', ng-click='seleccionarUsuario (dep.nombre)' ng_onload='cargaFoto(dep.curp)'>
             <td>{{dep.nombre}} </td>
             <td>{{dep.tecProcedencia}}</td>
             <td>{{dep.disciplina}}</td>
-            <td></td>
+            <td>Deportista</td>
             <td><input type="checkbox" id="chbx" ng-model="$scope.seleccionado[dep]"></td>
+            <td><canvas id="{{dep.curp}}" width='190' height='240' class='oculto' style=" display:true; border:3px solid #ccc;" ></canvas></td>
+            <!--td><img src="" ng_onload="cargaFoto( {{dep.curp}} )" style=" display:none "></td-->
 
             <td><button type="button" class="btn btn-info btn-sm pull-right" ng-click="imprimir(dep)">
-            <i class="fas fa-print" aria-hidden></i>
-            </button></td>
+              <i class="fas fa-print" aria-hidden></i>
+              </button></td>
           </tr>
         </tbody>
         </table>
